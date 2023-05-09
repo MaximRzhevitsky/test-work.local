@@ -1,0 +1,14 @@
+<div class="logo">
+	{{#unlesspage 'home'}}
+	<a href="{{root}}">
+	{{/unlesspage}}
+	{{#if logo1}}
+		<img src="{{root}}{{logo1}}" alt="">
+	{{/if}}
+	{{#if logo2}}
+		<img src="{{root}}{{logo2}}" alt="">
+	{{/if}}
+	{{#unlesspage 'home'}}
+	</a>
+	{{/unlesspage}}
+</div>

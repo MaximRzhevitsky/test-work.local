@@ -1,0 +1,57 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.error-404 {
+	text-align: center;
+	color: $color-text-main;
+	padding-bottom: 40px;
+
+	@media (--lg) {
+		padding: 40px 0 110px;
+	}
+
+	&__image {
+		width: 300px;
+		margin: 0 auto 20px;
+	}
+
+	&__title {
+		@include text-style-text-headline-1;
+
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		@include text-style-text-headline-2;
+
+		margin-bottom: 50px;
+	}
+
+	&__text {
+		@include text-style-text-text-main;
+
+		margin-bottom: 20px;
+	}
+
+	&__links {
+		padding-bottom: 35px;
+	}
+
+	&__link {
+		@include text-style-text-links;
+
+		color: $color-colors-main;
+		display: inline-block;
+		margin: 0 30px 20px;
+		box-shadow: 0 0 0 0 $color-colors-white, 0 1px 0 0 $color-colors-main;
+
+		&:hover {
+			text-decoration: none;
+			box-shadow: none;
+		}
+	}
+
+	&__button {
+		min-width: 178px;
+		margin-bottom: 60px;
+	}
+}

@@ -1,0 +1,86 @@
+<div class="page-header__content">
+	{{>logo logo1='assets/images/logo.svg' logo2=''}}
+
+	<div class="nav-menu">
+		<nav class="menu-header-second" aria-label="Header Second">
+			<ul class="menu-header-second__items" data-role="menubar" data-accessibility-menu>
+				<li class="menu-header-second__item">
+					<a class="menu-header-second__link menu-header-second__link_phone" href="tel:#"
+					   data-role="menuitem">(123) 456-7890</a></li>
+				<li class="menu-header-second__item btn-link">
+					<a class="menu-header-second__link btn-link" href="#"
+					   data-role="menuitem">Get A Quote</a></li>
+				{{#if (isWoocommerce)}}
+					<li class="menu-header-second__item cart menu-cart-link">
+						{{>menu-cart-link linkText='My Cart' total='' count=3}}
+					</li>
+				{{/if}}
+			</ul>
+		</nav>
+
+		<nav class="menu-header-main" aria-label="Header Main">
+			<ul class="menu-header-main__items" data-role="menubar" data-accessibility-menu>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1"
+					   data-role="menuitem" href="#">Home</a></li>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1 menu-header-main__link_current"
+					   data-role="menuitem" aria-haspopup="true"
+					   aria-expanded="false" href='#'>About Us</a>
+					<ul class="menu-header-main__sub-items menu-header-main__sub-items_level_1" data-role="menu">
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   href="#">Sub menu item II</a></li>
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   href="#">Sub menu item II</a></li>
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   aria-haspopup="true" aria-expanded="false"
+							   href="#">Sub menu itemII</a>
+							<ul class="menu-header-main__sub-items" data-role="menu">
+								<li class="menu-header-main__item">
+									<a class="menu-header-main__link"
+									   data-role="menuitem" href="#">Sub menu item
+										III</a></li>
+								<li class="menu-header-main__item">
+									<a class="menu-header-main__link"
+									   data-role="menuitem" href="#">Sub menu item
+										III</a></li>
+								<li class="menu-header-main__item">
+									<a class="menu-header-main__link"
+									   data-role="menuitem" href="#">Sub menu item
+										III</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1"
+					   data-role="menuitem" href="#">Services</a></li>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1"
+					   data-role="menuitem" href="#">Technology</a></li>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1"
+					   data-role="menuitem" href="#">Careers</a></li>
+				<li class="menu-header-main__item menu-header-main__item_level_1">
+					<a class="menu-header-main__link menu-header-main__link_level_1"
+					   data-role="menuitem" aria-haspopup="true"
+					   aria-expanded="false" href="#">Contact</a>
+					<ul class="menu-header-main__sub-items menu-header-main__sub-items_level_1" data-role="menu">
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   href="#">Sub menu item II</a></li>
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   href="#">Sub menu item II</a></li>
+						<li class="menu-header-main__item">
+							<a class="menu-header-main__link" data-role="menuitem"
+							   href="#">Sub menu item II</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+const t=/^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?vi?=|&vi?=))([^#&?]*).*/;export function getYouTubeVideoIdFromUrl(e){const o=e.match(t);return o?o[1]:0}

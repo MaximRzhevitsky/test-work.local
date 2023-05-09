@@ -1,0 +1,23 @@
+<li class="blog-items__item">
+	<article class="blog-item{{#ifequal 1 index}} blog-item_two-columns{{/ifequal }} accessibility-card">
+		<div class="blog-item__text">
+			<h2 class="blog-item__title title">
+				<a class="blog-item__link" href="#" aria-describedby="read-more-{{index}}">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit scelerisque fermentum.
+				</a>
+			</h2>
+			<p class="blog-item__except">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium, sapien vel
+				non leo arcu venenatis...</p>
+			<div class="blog-item__posted">Posted - February 24, 2021</div>
+			<div class="blog-item__more" aria-hidden="true" id="read-more-{{index}}">Learn More</div>
+			<aside class="blog-categories blog-item__categories">
+				<h3 class="screen-reader-text">Categories:</h3>
+				<a class="blog-categories_link" href="#" rel="category tag">Adipiscing</a>
+				<a class="blog-categories_link" href="#" rel="category tag">Fermentum</a>
+			</aside>
+		</div>
+		<div class="blog-thumbnail blog-item__thumbnail">
+			<img class="blog-thumbnail__image" src="{{root}}{{image}}" alt="">
+		</div>
+	</article>
+</li>

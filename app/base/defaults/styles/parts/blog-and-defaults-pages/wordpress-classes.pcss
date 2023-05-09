@@ -1,0 +1,34 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.alignleft {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	display: block;
+
+	@media (--md) {
+		margin-right: 24px;
+		display: inline;
+		float: left;
+	}
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.alignright {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+
+	@media (--md) {
+		margin-left: 24px;
+		display: inline;
+		float: right;
+	}
+}

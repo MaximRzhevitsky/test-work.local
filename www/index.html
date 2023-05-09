@@ -1,0 +1,124 @@
+<head>
+</head>
+<body>
+  <section class="index__section">
+    <ul class="index__list">
+      <h2 class="index__section-heading">defaults</h2>
+
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/blog-post.html">
+      								blog-post.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/blog.html">
+      								blog.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/error-404.html">
+      								error-404.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/faq.html">
+      								faq.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/gravity-form.html">
+      								gravity-form.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/privacy-policy.html">
+      								privacy-policy.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/search-results.html">
+      								search-results.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/site-map.html">
+      								site-map.html
+      							</a>
+      						</li>
+      					
+      						<li class="index__item sub-dir">
+      							<a
+      								class="index__item-link"
+      								href="defaults/thank-you.html">
+      								thank-you.html
+      							</a>
+      						</li>
+      					</ul>
+  </section>
+  <section class="index__section">
+    <ul class="index__list">
+      <h2 class="index__section-heading">home.html</h2>
+
+      						<li class="index__item root-dir">
+      							<a
+      								class="index__item-link"
+      								href="home.html">
+      								home.html
+      							</a>
+      						</li>
+      					</ul>
+  </section>
+
+					<script>
+						const rootItems = document.querySelectorAll('.root-dir');
+						const rootSection = document.createElement('section');
+						const rootTitle = document.createElement('h2');
+						const rootList = document.createElement('ul');
+						const incorrectTitles = document.querySelectorAll('ul h2');
+
+						rootTitle.innerText = 'project';
+
+						rootSection.appendChild(rootTitle);
+						rootSection.appendChild(rootList);
+
+						rootItems.forEach(function(rootItem) {
+							rootItem.closest('section').style.display = 'none';
+
+							if (!rootItem.classList.contains('index')) {
+								rootList.appendChild(rootItem);
+							}
+						});
+
+						incorrectTitles.forEach(function(incorrectTitle) {
+							incorrectTitle
+								.closest('section')
+								.insertBefore(incorrectTitle, incorrectTitle.closest('ul'));
+						});
+
+						document.body.insertBefore(rootSection, document.body.querySelector('section'));
+					</script>
+					</body>
+				

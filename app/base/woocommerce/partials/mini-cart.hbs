@@ -1,0 +1,24 @@
+<ul class="woocommerce-mini-cart cart_list product_list_widget ">
+	{{>mini-cart-item image="https://dummyimage.com/100x100"}}
+	{{>mini-cart-item image="https://dummyimage.com/100x80"}}
+	{{>mini-cart-item image="https://dummyimage.com/80x100"}}
+</ul>
+<p class="woocommerce-mini-cart__total total">
+   <span class="menu-cart__subtotal">
+      <strong class="menu-cart__sub-title">Subtotal</strong>
+	   {{>price price=15}}
+   </span>
+	<span class="menu-cart__tax">
+      <strong class="menu-cart__sub-title">Tax</strong>
+		{{>price price=1.24}}
+   </span>
+	<span class="menu-cart__total">
+      <strong class="menu-cart__sub-title">Total</strong>
+		{{>price price=16.24}}
+   </span>
+</p>
+
+<p class="woocommerce-mini-cart__buttons buttons">
+	<a href="#" class="button wc-forward">View cart</a>
+	<a href="#" class="button checkout wc-forward">Checkout</a>
+</p>

@@ -1,0 +1,82 @@
+@import "../../variables-and-mixins.pcss";
+
+.cli-modal {
+	&-content {
+		text-align: center;
+	}
+
+	.cli-alert-dialog-buttons {
+		display: flex;
+	}
+
+	.cli-ccpa-button-cancel {
+		background: $color-colors-white !important;
+		border: 2px solid $color-colors-main !important;
+		border-radius: $border-radius-global !important;
+		color: $color-colors-main;
+		transition: 0.3s;
+
+		&:--enter {
+			background: $color-colors-main !important;
+			color: $color-colors-white;
+		}
+	}
+
+	.cli-ccpa-button-confirm {
+		background: $color-colors-main !important;
+		border: 2px solid $color-colors-main !important;
+		border-radius: $border-radius-global !important;
+		transition: 0.3s;
+
+		&:--enter {
+			background: $color-element-hover !important;
+			border: 2px solid $color-element-hover !important;
+		}
+	}
+
+	.cli-switch input:checked + .cli-slider {
+		background-color: $color-colors-main;
+	}
+
+	.cli-tab-footer .wt-cli-privacy-accept-btn {
+		background: $color-colors-main !important;
+		border: 2px solid $color-colors-main !important;
+		border-radius: $border-radius-global !important;
+		transition: 0.3s;
+
+		&:--enter {
+			background: $color-element-hover !important;
+			border: 2px solid $color-element-hover !important;
+		}
+	}
+
+	.cli-bar-popup {
+		padding: 40px 30px;
+	}
+
+	.cli-tab-container .cli-row {
+		scrollbar-width: thin;
+		scrollbar-color: $color-colors-main $color-colors-light-gray;
+
+		&::-webkit-scrollbar {
+			height: 3px;
+			width: 3px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: $color-colors-light-gray;
+			border-radius: 2px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $color-colors-main;
+			border-radius: 2px;
+		}
+	}
+
+	&[id$="cLiCcpaOptoutPrompt"] .cli-modal-dialog {
+		max-width: 320px;
+		margin: 0 auto;
+		width: calc(100% - 0.5rem);
+	}
+}

@@ -1,0 +1,64 @@
+@import "../../../src/styles/variables-and-mixins.pcss";
+
+/* Woo global variable */
+$woo-color-colors-main: $color-colors-main;
+$woo-color-colors-white: $color-colors-white;
+$woo-color-colors-element: $color-colors-element;
+$woo-elements-color: $color-colors-light-gray;
+$woo-color-text-main: $color-text-main;
+$woo-color-text-star: #ffc107;
+$woo-font-family-star: star;
+$woo-font-family-global: $font-family-global;
+$woo-color-bg-custom: $color-bg-custom;
+$woo-thumbnail-size: 100px;
+$woo-main-padding: 20px;
+
+/* Messages. */
+$info-color: $woo-color-text-main;
+$success-color: #008001;
+$warning-color: #ecca16;
+$error-color: #ff3232;
+
+/* Icons. */
+$trash-icon: svg-load("../images/svg-load/trash-cart.svg");
+$trash-icon-active: svg-load("../images/svg-load/trash-active.svg");
+$check-icon: svg-load("../images/svg-load/check.svg");
+$cart-icon: svg-load("../images/svg-load/cart.svg");
+$check-icon-circle: svg-load("../images/svg-load/check-icon.svg");
+
+/* Global styles */
+.woocommerce-section {
+	color: $woo-color-text-main;
+	font-family: $woo-font-family-global;
+
+	h2,
+	h3,
+	th {
+		color: $woo-color-text-main;
+		font-family: $woo-font-family-global;
+	}
+
+	a:not(.btn, .button) {
+		color: $woo-color-colors-main;
+		font-family: $woo-font-family-global;
+	}
+
+	.inner {
+		padding-top: $woo-main-padding;
+		padding-bottom: $woo-main-padding;
+
+		@media screen and (--lg) {
+			padding-top: calc($woo-main-padding * 2);
+			padding-bottom: calc($woo-main-padding * 2);
+		}
+	}
+
+	.block-for-extend {
+		padding: $woo-main-padding;
+		background-color: $woo-color-colors-element;
+
+		@media screen and (--lg) {
+			padding: calc($woo-main-padding * 2);
+		}
+	}
+}

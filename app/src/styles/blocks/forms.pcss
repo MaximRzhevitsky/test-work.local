@@ -1,0 +1,35 @@
+@import "../variables-and-mixins.pcss";
+
+.form {
+	&__item {
+		width: 100%;
+		position: relative;
+	}
+
+	&__input {
+		@include input;
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			-webkit-appearance: none;
+		}
+	}
+
+	&__label {
+		@include text-style-text-text-2;
+
+		position: absolute;
+		top: calc($height-element / 4);
+		left: 30px;
+		color: $color-text-main;
+		transition: 0.3s;
+	}
+
+	&__item_in-focus-or-has-value &__label {
+		top: 5px;
+		font-size: 10px;
+		line-height: 10px;
+	}
+}

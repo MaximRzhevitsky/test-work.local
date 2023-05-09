@@ -1,0 +1,537 @@
+---
+pageTitle: Gravity form Demo
+---
+
+<!-- These styles are not for blocks, but for the entire page. -->
+<link rel="stylesheet" href="{{root}}assets/css/blog-and-defaults-pages.css">
+
+{{>breadcrumb last="Other Title Page"}}
+{{>breadcrumb parents="parent 1/parent 2/parent 3"}}
+{{>search-form
+	class="form-result"
+	image="assets/images/search-result-bg.jpg"
+	title="Search"
+	first="true"
+}}
+{{>pagination}}
+
+<link rel="stylesheet" href="{{root}}assets/css/gravity-forms.css">
+<section class="section-form">
+	<div class="inner">
+		<h1 class="title">Form All Fields</h1>
+
+		{{#> gform-form
+			showError=false
+			showConfirmation=false
+		}}
+
+			{{#> gform-body showError=showError}}
+				<!-- Custom class: gfield_single_line_text -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Single Line Text"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_paragraph_text -->
+				{{> gform-paragraphText
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Paragraph Text"
+					required=true
+					fieldSize="medium"
+					descriptionText="Description text"
+					maxChar=20
+				}}
+
+				<!-- Custom class: gfield_dropdown -->
+				{{> gform-dropdown
+					showError=showError
+					customClass="gfield_dropdown"
+					hideLabel=false
+					labelText="Dropdown"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_number -->
+				{{> gform-number
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Number"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+					min=1
+					max=100
+				}}
+
+				<!-- Custom class: gfield_checkboxes -->
+				{{#> gform-checkboxes
+					showError=showError
+					customClass="gfield_checkboxes"
+					hideLabel=false
+					labelText="Checkboxes"
+					required=true
+					descriptionText="Description text"
+				}}
+					{{> gform-checkboxes-checkbox
+						labelText="First Choice"
+						checked=true
+					}}
+					{{> gform-checkboxes-checkbox
+						labelText="Second Choice"
+						checked=true
+					}}
+					{{> gform-checkboxes-checkbox
+						labelText="Third Choice"
+						checked=true
+					}}
+				{{/gform-checkboxes}}
+
+				<!-- Custom class: gfield_radio_buttons -->
+				{{#> gform-radioButtons
+					showError=showError
+					customClass="gfield_radio_buttons"
+					hideLabel=false
+					labelText="Radio Buttons"
+					required=true
+					descriptionText="Description text"
+					enableOtherChoice=true
+				}}
+					{{> gform-radioButtons-checkbox
+						labelText="First Choice"
+						checked=true
+					}}
+					{{> gform-radioButtons-checkbox
+						labelText="Second Choice"
+						checked=true
+					}}
+					{{> gform-radioButtons-checkbox
+						labelText="Third Choice"
+						checked=true
+					}}
+				{{/gform-radioButtons}}
+
+				<!-- Custom class: gfield_html -->
+				{{#> gform-html }}
+					<div>
+						<h4>HTML CONTENT</h4>
+						<p>This is a content placeholder. HTML content is not displayed in the form admin. Preview this
+							form to view the content.</p>
+						<img src="{{root}}assets/images/test-bg.png" width="120" height="120" alt="" title="">
+					</div>
+				{{/gform-html}}
+
+				<!-- Custom class: gfield_name -->
+				{{> gform-name
+					showError=showError
+					customClass="gfield_name"
+					hideLabel=false
+					labelText="Name"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+					hasFirstName=true
+					firstLabelText=""
+					firstPlaceholderText=""
+					hasMiddleName=true
+					middleLabelText=""
+					middlePlaceholderText=""
+					hasLastName=true
+					lastLabelText=""
+					lastPlaceholderText=""
+					hasSuffix=true
+					suffixLabelText=""
+					suffixPlaceholderText=""
+				}}
+
+				<!-- Custom class: gfield_date -->
+				{{> gform-date
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Date"
+					required=true
+					descriptionText="Description text"
+					dateInputType=2
+				}}
+
+				<!-- Custom class: gfield_phone -->
+				{{> gform-phone
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Phone"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_address -->
+				{{> gform-address
+					showError=showError
+					customClass="gfield_address"
+					hideLabel=false
+					labelText="Address"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+					addressType=1
+					hasStreet=true
+					hasStreet2=true
+					hasCity=true
+					hasState=true
+					hasZip=true
+					hasCountry=true
+				}}
+
+				<!-- Custom class: gfield_website -->
+				{{> gform-website
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Website"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_email -->
+				{{> gform-email
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Email"
+					required=true
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText="Description text"
+					enableConfirmation=false
+					enterEmailLabel=""
+					confirmEmailLabel=""
+				}}
+
+				<!-- Custom class: gfield_section_break -->
+				{{> gform-sectionBreak
+					customClass=""
+					labelText="Section Break"
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_file_upload -->
+				{{> gform-fileUpload
+					showError=showError
+					customClass="gfield_file_upload"
+					hideLabel=false
+					labelText="File Upload"
+					required=true
+					fieldSize="medium"
+					descriptionText="Max. file size: 50 MB."
+					enableMultifile=true
+					maxFileSize=50
+					allowedExtension="jpg, gif, png, pdf"
+				}}
+
+				<!-- Custom class: gfield_multi_select -->
+				{{> gform-multiSelect
+					showError=showError
+					customClass="gfield_multi_select"
+					hideLabel=false
+					labelText="Multi Select"
+					required=true
+					fieldSize="medium"
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_list -->
+				{{> gform-list
+					showError=showError
+					customClass="gfield_list"
+					hideLabel=false
+					labelText="List"
+					required=true
+					descriptionText="Description text"
+					multiColumns=""
+				}}
+
+				<!-- Custom class: gfield_list -->
+				{{> gform-list
+					showError=showError
+					customClass="gfield_list"
+					hideLabel=false
+					labelText="List Multi Columns"
+					required=true
+					descriptionText="Description text"
+					multiColumns="Column 1|Column 2|Column 3"
+				}}
+
+				<!-- Custom class: gfield_consent -->
+				{{> gform-consent
+					showError=showError
+					customClass="gfield_consent"
+					hideLabel=false
+					labelText="Consent"
+					required=true
+					checkboxLabel="I agree to the privacy policy. Test"
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_time -->
+				{{> gform-time
+					showError=showError
+					customClass="gfield_time"
+					hideLabel=false
+					labelText="Time"
+					required=true
+					descriptionText="Description text"
+					timeFormat=12
+					HHLabelText=""
+					MMLabelText=""
+				}}
+
+				{{> gform-footer
+					type="button"
+					text="Submit"
+					beforeInputText="<p>We respect your privacy and will never share your information with any 3rd parties. You must be 18 years or older to redeem 3 day passes.</p>"
+				}}
+
+				<!-- Custom class: gfield_section_break -->
+				{{> gform-sectionBreak
+					customClass=""
+					labelText="Test width"
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class width: gfield--width-full (width: 100%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-full"
+					hideLabel=false
+					labelText="gfield--width-full (width: 100%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-half (width: 50%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-half"
+					hideLabel=false
+					labelText="gfield--width-half (width: 50%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-half (width: 50%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-half"
+					hideLabel=false
+					labelText="gfield--width-half (width: 50%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-half (width: 33.333%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-third"
+					hideLabel=false
+					labelText="gfield--width-third (33%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-half (width: 33.333%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-third"
+					hideLabel=false
+					labelText="gfield--width-third (33%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-half (width: 33.333%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-third"
+					hideLabel=false
+					labelText="gfield--width-third (33%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-quarter (width: 25%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-quarter"
+					hideLabel=false
+					labelText="gfield--width-quarter (25%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-quarter (width: 25%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-quarter"
+					hideLabel=false
+					labelText="gfield--width-quarter (25%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-quarter (width: 25%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-quarter"
+					hideLabel=false
+					labelText="gfield--width-quarter (25%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class width: gfield--width-quarter (width: 25%) -->
+				{{> gform-singleLineText
+					showError=showError
+					customClass="gfield--width-quarter"
+					hideLabel=false
+					labelText="gfield--width-quarter (25%)"
+					required=true
+					typeTextOrPassword="text"
+					fieldSize="medium"
+					placeholderText=""
+					descriptionText=""
+				}}
+
+				<!-- Custom class: gfield_section_break -->
+				{{> gform-sectionBreak
+					customClass=""
+					labelText="Products"
+					descriptionText="Description text"
+				}}
+
+				<!-- Custom class: gfield_product -->
+				{{> gform-product
+					showError=showError
+					customClass=""
+					labelText="product"
+					required=true
+					descriptionText="Description text"
+					fieldSize="medium"
+					fieldType=2
+					price=10
+				}}
+
+				<!-- Custom class: gfield_quantity -->
+				{{> gform-productQuantity
+					showError=showError
+					customClass=""
+					labelText="product Quantity"
+					required=true
+					placeholderText=""
+					descriptionText="Description text"
+					fieldSize="medium"
+					fieldType=1
+					min=1
+					max=100
+				}}
+
+				<!-- Custom class: gfield_product_option -->
+				<!-- fieldType=1 (select)-->
+				{{> gform-productOption
+					showError=showError
+					customClass="gfield_product_option"
+					labelText="product Option"
+					required=true
+					descriptionText="Description text"
+					fieldType=1
+				}}
+
+				<!-- Custom class: gfield_product_option -->
+				<!-- fieldType=2 (checkbox)-->
+				{{> gform-productOption
+					showError=showError
+					customClass="gfield_product_option"
+					labelText="product Option"
+					required=true
+					descriptionText="Description text"
+					fieldType=2
+				}}
+
+				<!-- Custom class: gfield_product_option -->
+				<!-- fieldType=3 (radiobutton)-->
+				{{> gform-productOption
+					showError=showError
+					customClass="gfield_product_option"
+					labelText="product Option"
+					required=true
+					descriptionText="Description text"
+					fieldType=3
+				}}
+
+				<!-- Custom class: gfield_shipping -->
+				{{> gform-productShipping
+					showError=showError
+					customClass=""
+					labelText="product Shipping"
+					required=true
+					descriptionText="Description text"
+					fieldType=1
+				}}
+
+				<!-- Custom class: gfield_product_total -->
+				{{> gform-productTotal
+					customClass=""
+					labelText="product Total"
+					descriptionText="Description text"
+					total=3
+				}}
+			{{/gform-body}}
+		{{/gform-form}}
+	</div>
+</section>

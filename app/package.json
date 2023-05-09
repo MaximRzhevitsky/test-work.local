@@ -1,0 +1,247 @@
+{
+    "name": "markup-template",
+    "private": true,
+    "scripts": {
+        "start": "gulp start --gulpfile gulp/gulpfile.babel.js --cwd ./ --open",
+        "build": "gulp build --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "templates": "gulp templates --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "clear-cache-and-dist": "gulp clear --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "----- WordPress -----": "",
+        "wp-build": "gulp wpBuild --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "wp-scripts": "gulp wpScripts --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "wp-styles": "gulp wpStyles --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "wp-fonts": "gulp wpFonts --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "wp-images": "gulp wpImages --gulpfile gulp/gulpfile.babel.js --cwd ./ --production",
+        "----- Coding Standards -----": "",
+        "scripts-lint": "eslint src/{defaults,project,woocommerce}/scripts/**/*.js",
+        "scripts-lint-fix": "eslint src/{defaults,project,woocommerce}/scripts/**/*.js --fix",
+        "styles-liynt": "stylelint src/{defaults,project,woocommerce}/styles/**/*.pcss",
+        "styles-lint-fix": "stylelint src/{defaults,project,woocommerce}/styles/**/*.pcss --fix",
+        "wp-lint": "phpcs --standard=../wp-content/themes/parent-theme/phpcs.xml ../wp-content/themes/child-theme/",
+        "wp-lint-fix": "phpcbf --standard=../wp-content/themes/parent-theme/phpcs.xml ../wp-content/themes/child-theme/",
+        "----- Browserslist -----": "",
+        "view-browserslist": "npx browserslist",
+        "update-browserslist": "npx update-browserslist-db@latest",
+        "----- Tools ----": "",
+        "check-updates": "npm outdated",
+        "update": "npm update"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.21.5",
+        "@babel/preset-env": "^7.21.5",
+        "@babel/register": "^7.21.0",
+        "@sumotto/gulp-local-fonts": "^1.4.0",
+        "@wordpress/eslint-plugin": "^14.5.0",
+        "@wordpress/prettier-config": "^2.15.0",
+        "@wordpress/stylelint-config": "^21.15.0",
+        "babel-loader": "^9.1.2",
+        "browser-sync": "^2.29.1",
+        "css-loader": "^6.7.3",
+        "csso": "^5.0.5",
+        "eslint": "^8.39.0",
+        "glob": "^10.2.2",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-debug": "^3.2.0",
+        "gulp-extname": "^0.2.2",
+        "gulp-if": "^3.0.0",
+        "gulp-index": "^0.2.0",
+        "gulp-postcss": "^9.0.1",
+        "gulp-terser": "^2.1.0",
+        "handlebars": "^4.7.7",
+        "js-beautify": "^1.14.7",
+        "js-yaml": "^4.1.0",
+        "panini": "^1.7.2",
+        "postcss": "^8.4.23",
+        "postcss-advanced-variables": "^3.0.1",
+        "postcss-at-else": "^2.0.1",
+        "postcss-browser-reporter": "^0.6.0",
+        "postcss-calc": "^9.0.0",
+        "postcss-color-mod-function": "^3.0.3",
+        "postcss-csso": "^6.0.1",
+        "postcss-extend-rule": "^4.0.0",
+        "postcss-import": "^15.1.0",
+        "postcss-import-ext-glob": "^2.1.1",
+        "postcss-inline-svg": "^6.0.0",
+        "postcss-mixins": "^9.0.4",
+        "postcss-nested": "^6.0.1",
+        "postcss-preset-env": "^7.8.3",
+        "postcss-pxtorem": "^6.0.0",
+        "postcss-reporter": "^7.0.5",
+        "postcss-scss": "^4.0.6",
+        "postcss-sort-media-queries": "^5.1.0",
+        "postcss-svgo": "^6.0.0",
+        "postcss-url": "^10.1.3",
+        "prettier": "npm:wp-prettier@^2.6.2",
+        "rimraf": "^5.0.0",
+        "sass": "^1.62.1",
+        "sass-loader": "^13.2.2",
+        "style-loader": "^3.3.2",
+        "stylelint": "^14.16.1",
+        "terser-sync": "^0.1.1",
+        "through2": "^4.0.2",
+        "url-loader": "^4.1.1",
+        "vinyl": "^3.0.0",
+        "vinyl-named": "^1.1.0",
+        "webpack": "^5.81.0",
+        "webpack-stream": "^7.0.0",
+        "yargs": "^17.7.2"
+    },
+    "dependencies": {
+        "dialog-polyfill": "^0.5.6",
+        "instant.page": "^5.1.1",
+        "select2": "^4.1.0-rc.0",
+        "tiny-slider": "^2.9.4",
+        "tom-select": "^2.2.2"
+    },
+    "browserslist": [
+        "cover 90% in US",
+        "not iOS < 14",
+        "not dead"
+    ],
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "stylelint": {
+        "extends": [
+            "@wordpress/stylelint-config/scss"
+        ],
+        "rules": {
+            "rule-empty-line-before": null,
+            "declaration-colon-newline-after": null,
+            "at-rule-empty-line-before": [
+                "always",
+                {
+                    "except": [
+                        "blockless-after-same-name-blockless",
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "after-comment"
+                    ],
+                    "ignoreAtRules": [
+                        "else"
+                    ]
+                }
+            ],
+            "block-closing-brace-newline-after": [
+                "always",
+                {
+                    "ignoreAtRules": [
+                        "if",
+                        "else",
+                        "media"
+                    ]
+                }
+            ],
+            "comment-empty-line-before": [
+                "always",
+                {
+                    "except": [
+                        "first-nested"
+                    ]
+                }
+            ],
+            "no-descending-specificity": null,
+            "selector-class-pattern": [
+                "^breadcrumb_last$|^select2.*$|^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {
+                    "message": "Selector should use lowercase and separate words with hyphens (selector-class-pattern)"
+                }
+            ],
+            "scss/at-extend-no-missing-placeholder": null,
+            "scss/at-rule-no-unknown": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "svg-load",
+                        "else",
+                        "import-glob",
+                        "modifier"
+                    ]
+                }
+            ],
+            "selector-pseudo-element-no-unknown": [
+                true,
+                {
+                    "ignorePseudoElements": [
+                        "input-placeholder"
+                    ]
+                }
+            ],
+            "at-rule-no-unknown": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "mixin",
+                        "include",
+                        "extend",
+                        "import-glob",
+                        "else",
+                        "modifier"
+                    ]
+                }
+            ],
+            "property-no-unknown": [
+                true,
+                {
+                    "ignoreProperties": [
+                        "text-stroke"
+                    ]
+                }
+            ]
+        },
+        "overrides": [
+            {
+                "files": [
+                    "**/{defaults,woocommerce}/styles/**/*.pcss"
+                ],
+                "rules": {
+                    "scss/selector-no-redundant-nesting-selector": null,
+                    "selector-class-pattern": ".*",
+                    "selector-id-pattern": ".*"
+                }
+            },
+            {
+                "files": [
+                    "**/styles/gravity-forms.pcss"
+                ],
+                "rules": {
+                    "selector-class-pattern": [
+                        "^validation_.*$|^hide_summary$|^gform.*$|^gsection.*$|^gfield.*$|^ginput.*$|^hidden_label$|^([a-z][a-z0-9]*)(-[a-z0-9]+)*$|^(add|delete)_list_item$|^select2.*$|^warningTextareaInfo$",
+                        {
+                            "message": "Selector should use lowercase and separate words with hyphens (selector-class-pattern)"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:@wordpress/eslint-plugin/recommended"
+        ],
+        "env": {
+            "browser": true,
+            "jquery": true
+        },
+        "rules": {
+            "@wordpress/no-global-active-element": "off",
+            "import/no-extraneous-dependencies": "off"
+        },
+        "globals": {
+            "window": true,
+            "theme": true,
+            "jquery": true,
+            "google": true
+        },
+        "parserOptions": {
+            "requireConfigFile": false
+        }
+    },
+    "eslintIgnore": [
+        "base/defaults/scripts/jquery/libs/jquery-fix.js"
+    ]
+}

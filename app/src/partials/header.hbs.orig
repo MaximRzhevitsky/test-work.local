@@ -1,0 +1,40 @@
+{{!-- Header section block --}}
+<header class="header">
+  <div id="sticky-header" class="unfixed">
+    <div class="inner">
+      {{>logo logo1='images/logo.png' logo2=''}}
+
+      <nav class="second-nav-container">
+        <ul class="second-nav">
+          <li class="phone-link"><a href="tel:#">(123) 456-7890</a></li>
+          <li class="btn-link"><a href="#">Get A Quote</a></li>
+          {{>menu-cart linkText='My Cart' total=30.33 count=8}}>
+          {{>menu-cart count=0}}
+        </ul>
+      </nav>
+
+      <nav class="main-nav-container">
+        <ul class="main-nav header-nav">
+          <li class="home-icon"><a href="#">Home</a></li>
+          <li class="menu-item-has-children current-menu-item">
+            <a href="#">About Us</a>
+            <ul class="sub-menu">
+              <li><a href="#">Sub menu item</a></li>
+              <li><a href="#">Sub menu item</a></li>
+              <li><a href="#">Sub menu item</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Careers</a></li>
+          <li class="btn"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <button class="menu-button" id="open-button">
+      <span class="screen-reader-text">Menu</span>
+      <span class="cart-count">0</span>{{!-- Delete if not used WooCommerce --}}
+    </button>
+  </div>
+</header>

@@ -1,0 +1,41 @@
+@import "../../variables-and-mixins.pcss";
+
+.menu-header-second {
+	display: none;
+
+	@media (--lg) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: 24px;
+
+		&__items {
+			display: block;
+		}
+
+		&__item {
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+
+			&:not(:first-child) {
+				margin-left: 30px;
+			}
+		}
+
+		&__link {
+			display: block;
+			color: $color-colors-white;
+			text-transform: uppercase;
+
+			&_phone {
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+			&.btn-link {
+				@include btn;
+			}
+		}
+	}
+}

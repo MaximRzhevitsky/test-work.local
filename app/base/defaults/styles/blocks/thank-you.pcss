@@ -1,0 +1,76 @@
+@import "../../../../src/styles/variables-and-mixins.pcss";
+
+.thank-you {
+	padding: 60px 0 150px;
+	color: $color-text-main;
+	text-align: center;
+
+	/* noinspection CssInvalidFunction */
+	&__wrapper {
+		padding-top: 90px;
+		max-width: 475px;
+		margin: 0 auto 100px;
+
+		/* prettier-ignore */
+		background: svg-load("../../images/svg-load/thank-you-page-icon.svg") center top / 80px 80px no-repeat;
+	}
+
+	&__title {
+		@include text-style-text-headline-1;
+
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 34px;
+		margin-bottom: 20px;
+	}
+
+	& p:not(&__subtitle) {
+		@include text-style-text-text-main;
+	}
+
+	&__button.btn {
+		min-width: 178px;
+		background: transparent;
+		color: $color-colors-main;
+
+		&:--enter {
+			background: $color-colors-main;
+			color: $color-colors-white;
+		}
+	}
+
+	.social-links {
+		margin-bottom: 100px;
+
+		&__title-wrapper {
+			position: relative;
+			line-height: 34px;
+			margin-bottom: 25px;
+
+			@media (--xs) {
+				&::before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background: $color-text-main;
+					z-index: -1;
+				}
+			}
+		}
+
+		&__title {
+			@include text-style-text-headline-3;
+
+			padding: 0 34px;
+			background: $color-colors-white;
+		}
+	}
+}

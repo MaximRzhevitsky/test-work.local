@@ -1,0 +1,19 @@
+@import "../../../../src/styles/variables-and-mixins.pcss";
+
+.site-map {
+	padding: 40px 0 70px;
+
+	@media (--lg) {
+		padding-bottom: 150px;
+	}
+
+	&__title {
+		@include text-style-text-headline-1;
+
+		margin-bottom: 30px;
+
+		@media (--lg) {
+			margin-bottom: 60px;
+		}
+	}
+}

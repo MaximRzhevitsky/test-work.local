@@ -1,0 +1,29 @@
+<fieldset id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+		  class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass
+			  customClass}} {{gformRequiredClass
+			  required}}  field_sublabel_below field_description_below {{gformHideLabel
+			  hideLabel}} gfield_visibility_visible">
+	<legend class='gfield_label gfield_label_before_complex'>{{labelText}}{{#with required}}
+		<span class="gfield_required">*</span>{{/with}}
+	</legend>
+	<div class='ginput_container ginput_container_consent'>
+		<input name='input_{{gFormIndex}}_{{gFormFieldIndex}}'
+			   id='input_{{gFormIndex}}_{{gFormFieldIndex}}'
+			   type='checkbox' value='1'
+			   aria-required="true"
+			   aria-invalid="false" /> <label
+		class="gfield_consent_label" for='input_{{gFormIndex}}_{{gFormFieldIndex}}'>{{checkboxLabel}}</label>
+	</div>
+	{{#if descriptionText}}
+		<div class="gfield_description">{{descriptionText}}</div>
+	{{/if}}
+	{{#if showError}}
+		<div class="gfield_description validation_message">
+			{{#if customValidationText}}
+				{{customValidationText}}
+			{{else}}
+				This field is required.
+			{{/if}}
+		</div>
+	{{/if}}
+</fieldset>

@@ -1,0 +1,43 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.menu-blog {
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		column-gap: 30px;
+		row-gap: 10px;
+		list-style-type: none;
+		padding: 30px 0 35px;
+		margin: 0;
+		border-bottom: 1px solid $color-colors-light-gray;
+	}
+
+	&__item_current &__link {
+		font-weight: 600;
+		color: $color-colors-main;
+	}
+
+	&__link {
+		@include text-style-text-text-main;
+
+		color: $color-text-main;
+		position: relative;
+
+		&:--enter {
+			font-weight: 600;
+			color: $color-colors-main;
+			text-decoration: none;
+
+			&::before {
+				content: " ";
+				position: absolute;
+				left: 0;
+				bottom: -4px;
+				height: 1px;
+				width: 100%;
+				background-color: $color-colors-main;
+			}
+		}
+	}
+}

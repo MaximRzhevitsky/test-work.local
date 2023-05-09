@@ -1,0 +1,82 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.text-content {
+	h2 {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 34px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	h4 {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 25px;
+		color: $color-colors-main;
+		margin-bottom: 20px;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	hr {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		width: 100%;
+		color: #a8aaba;
+		opacity: 0.15;
+	}
+
+	/*
+	todo: this is an extra class to get rid of,
+	      the icon should be styled according to the link extension
+	*/
+
+	.doc-download {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		color: $color-colors-main;
+		position: relative;
+		margin-left: 50px;
+
+		&:hover {
+			text-decoration: none;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			content: " ";
+			height: 1px;
+			width: 100%;
+			background-color: $color-colors-main;
+			left: 0;
+			bottom: -4px;
+		}
+
+		/* noinspection CssInvalidFunction */
+		&::after {
+			position: absolute;
+			content: " ";
+			top: 50%;
+			transform: translateY(-50%);
+			background-repeat: no-repeat;
+			width: 40px;
+			height: 40px;
+			left: -50px;
+
+			/* prettier-ignore */
+			background-image: svg-load("../../../images/svg-load/doc-file-icon.svg");
+		}
+	}
+}

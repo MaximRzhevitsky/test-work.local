@@ -1,0 +1,34 @@
+{{! Garvity forms Single Line Text Field component https://docs.gravityforms.com/website-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<div class="gfield gfield_website {{gformFieldErrorClass showError}} {{gformAddCustomClass
+	customClass}} {{gformRequiredClass
+	required}}  field_sublabel_below field_description_below {{gformHideLabel
+	hideLabel}} gfield_visibility_visible">
+	<label class="gfield_label" for="input_{{gFormIndex}}_{{gFormFieldIndex true}}">
+		{{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+	</label>
+	<div class="ginput_container ginput_container_text">
+		<input
+			name="input_{{gFormFieldIndex}}"
+			id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+			type="url"
+			value="{{defaultValue}}"
+			class="{{fieldSize}}"
+			placeholder="{{placeholderText}}"
+			aria-required="{{gformIsRequired required}}"
+			aria-invalid="false"
+		>
+	</div>
+	{{#if descriptionText}}
+		<div class="gfield_description">{{descriptionText}}</div>
+	{{/if}}
+	{{#if showError}}
+		<div class="gfield_description validation_message">
+			{{#if customValidationText}}
+				{{customValidationText}}
+			{{else}}
+				This field is required.
+			{{/if}}
+		</div>
+	{{/if}}
+</div>

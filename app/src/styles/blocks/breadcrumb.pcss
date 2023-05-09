@@ -1,0 +1,38 @@
+@import "../variables-and-mixins.pcss";
+
+.breadcrumb {
+	background-color: $color-colors-element;
+
+	> span {
+		display: block;
+		margin: 0 auto;
+		padding: 10px 15px;
+		max-width: $max-width-main-inner;
+		width: 100%;
+	}
+
+	span,
+	a {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	span {
+		color: $color-text-main;
+	}
+
+	a {
+		position: relative;
+		padding-right: 10px;
+		color: $color-colors-main;
+
+		&::before {
+			position: absolute;
+			content: "/";
+			top: -2px;
+			right: 0;
+		}
+	}
+}

@@ -1,0 +1,124 @@
+<div class="woocommerce-section checkout-section">
+	<div class="inner">
+		<div class="woocommerce">
+			<div class="woocommerce-order">
+				<div class="content">
+					{{#ifequal status 'success' }}
+						<span class="icon icon_success"></span>
+						<h2 class="title">Thank you!</h2>
+						<p class="woocommerce-thankyou-order-received">Your order was completed successfully!</p>
+						<p class="woocommerce-order-overview__order order">Order #1234567890</p>
+						<p>An email receipt, including the details about your order, has been sent to the email address
+							provided. Please keep it for your records.</p>
+						<section class="woocommerce-order-downloads">
+							<h2 class="woocommerce-order-downloads__title">Downloads</h2>
+							<table
+								class="woocommerce-table woocommerce-table--order-downloads shop_table shop_table_responsive order_details">
+								<thead>
+								<tr>
+									<th class="download-product">
+										<span class="nobr">File Name</span>
+									</th>
+									<th class="download-size">
+										<span class="nobr">Size</span>
+									</th>
+									<th class="download-file">
+										<span class="nobr">Download</span>
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="download-product" data-title="File Name">
+										<a href="#">Lorem ipsum dolor sit amet.</a>
+									</td>
+									<td class="download-size" data-title="Size">
+										<span>22mb</span>
+									</td>
+									<td class="download-file" data-title="Download">
+										<a href="#"
+										   class="woocommerce-MyAccount-downloads-file alt btn">Downloads</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="download-product" data-title="File Name">
+										<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+									</td>
+									<td class="download-size" data-title="Size">
+										<span>1.4mb</span>
+									</td>
+									<td class="download-file" data-title="Download">
+										<a href="#"
+										   class="woocommerce-MyAccount-downloads-file alt btn">Downloads</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="download-product" data-title="File Name">
+										<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+									</td>
+									<td class="download-size" data-title="Size">
+										<span>2.8mb</span>
+									</td>
+									<td class="download-file" data-title="Download">
+										<a href="#"
+										   class="woocommerce-MyAccount-downloads-file alt btn">Downloads</a>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</section>
+						<div class="social-links">
+							<h2 class="social-links__title-wrapper"><span class="social-links__title">Follow us on Social!</span></h2>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/instagram.svg" alt="">
+								<span class="social-links__text">Instagram</span>
+							</a>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/facebook.svg" alt="">
+								<span class="social-links__text">Facebook</span>
+							</a>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/linkedin.svg" alt="">
+								<span class="social-links__text">LinkedIn</span>
+							</a>
+						</div>
+						<p class="back-to-home"><a href="#" class="btn">Back to Home</a></p>
+					{{/ifequal}}
+					{{#ifequal status 'failed' }}
+						<span class="icon icon_failed"></span>
+						<h2 class="title">We're Sorry</h2>
+						<p class="woocommerce-thankyou-order-failed">Your order cannot be processed as the originating
+							bank/merchant has declined your transaction. Please attempt your purchase again.</p>
+						<p class="woocommerce-thankyou-order-failed-actions">
+							<a href="#" class="btn pay">Pay</a>
+							<a href="#" class="btn pay">My account</a>
+						</p>
+						<div class="social-links">
+							<h2 class="social-links__title-wrapper"><span class="social-links__title">Follow us on Social!</span></h2>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/instagram.svg" alt="">
+								<span class="social-links__text">Instagram</span>
+							</a>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/facebook.svg" alt="">
+								<span class="social-links__text">Facebook</span>
+							</a>
+							<a href="#" class="social-links__link">
+								<img class="social-links__image" src="{{root}}assets/images/social-icons/linkedin.svg" alt="">
+								<span class="social-links__text">LinkedIn</span>
+							</a>
+						</div>
+						<p class="back-to-home"><a href="#" class="btn">Back to Home</a></p>
+					{{/ifequal}}
+				</div>
+				{{#if bg}}
+					<div class="background">
+						<img width="600" height="600" src="https://dummyimage.com/600x600"
+							 class="object-fit object-fit-cover"
+							 alt="">
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>

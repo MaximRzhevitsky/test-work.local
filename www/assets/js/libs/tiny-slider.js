@@ -1,0 +1,1 @@
+import e from"./live-dom";import n from"./dom-ready";let t;export function sliderDependencyCallback(e,n){"function"==typeof t?e():import("./tiny").then((n=>{t=n.default,e()})).catch(n)}export function tinySlider(o,i={}){let c;if("function"==typeof i)c=i;else{c=function(){i.container||(i.container=o),t(i)}}n((()=>{e(o).dependency(sliderDependencyCallback).firstShow(c)}))}

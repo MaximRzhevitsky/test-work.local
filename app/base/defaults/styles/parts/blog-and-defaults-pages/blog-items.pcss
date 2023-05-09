@@ -1,0 +1,18 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.blog-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px;
+
+	&__item {
+		&:not(:first-child) {
+			@media (--sm) {
+				width: calc(33.33% - 20px);
+			}
+		}
+	}
+}

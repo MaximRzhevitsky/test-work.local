@@ -1,0 +1,54 @@
+{{! Garvity forms Number Field component https://docs.gravityforms.com/number-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<div class="gfield {{gformFieldErrorClass showError}} {{gformAddCustomClass
+	customClass}} {{gformRequiredClass
+	required}}  field_sublabel_below field_description_below {{gformHideLabel
+	hideLabel}} gfield_visibility_visible">
+	<label class="gfield_label" for="input_{{gFormIndex}}_{{gFormFieldIndex true}}">
+		{{labelText}}{{#with required}}<span class="gfield_required">*</span>{{/with}}
+	</label>
+	<div class="ginput_container ginput_container_number">
+		<input
+			name="input_{{gFormFieldIndex}}"
+			id="input_{{gFormIndex}}_{{gFormFieldIndex}}"
+			type="number"
+			step="any"
+			{{#if min}}
+			min="{{min}}"
+			{{/if}}
+			{{#if max}}
+			max="{{max}}"
+			{{/if}}
+			value="{{defaultValue}}"
+			class="{{fieldSize}}"
+			placeholder="{{placeholderText}}"
+			aria-required="{{gformIsRequired required}}"
+			aria-invalid="false"
+		>
+		{{#if min}}
+			<div class="instruction">
+				{{#if max}}
+					Please enter a value between <strong>{{min}}</strong> and <strong>{{max}}</strong>.
+				{{else}}
+					Please enter a value greater than or equal to <strong>{{min}}</strong>.
+				{{/if}}
+			</div>
+		{{else}}
+			{{#if max}}
+				<div class="instruction">Please enter a value less than or equal to <strong>{{max}}</strong>.</div>
+			{{/if}}
+		{{/if}}
+	</div>
+	{{#if descriptionText}}
+		<div class="gfield_description">{{descriptionText}}</div>
+	{{/if}}
+	{{#if showError}}
+		<div class="gfield_description validation_message">
+			{{#if customValidationText}}
+				{{customValidationText}}
+			{{else}}
+				This field is required.
+			{{/if}}
+		</div>
+	{{/if}}
+</div>

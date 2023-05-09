@@ -1,0 +1,69 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.widget {
+	margin-bottom: 10px;
+
+	&:nth-last-of-type(2) {
+		text-align: center;
+		margin-top: 20px;
+
+		@media (--less-lg) {
+			display: none;
+		}
+	}
+
+	h2 {
+		@include text-style-text-headline-2;
+
+		margin-bottom: 0;
+	}
+
+	.wp-block-search {
+		&__inside-wrapper {
+			position: relative;
+		}
+
+		&__input {
+			@include input;
+
+			padding: 15px 20px 15px 50px;
+		}
+
+		/* noinspection CssInvalidFunction */
+		&__button {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 40px;
+			height: 100%;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+
+			/* prettier-ignore */
+			background: svg-load("../../../images/svg-load/search-icon.svg") center right / 20px 20px no-repeat;
+
+			.search-icon {
+				display: none;
+			}
+		}
+
+		&__label {
+			@include screen-reader-text;
+		}
+	}
+
+	.gform_wrapper {
+		.gfield {
+			margin-bottom: 20px;
+		}
+
+		.gform_footer {
+			width: 100%;
+
+			.button {
+				width: 100%;
+			}
+		}
+	}
+}

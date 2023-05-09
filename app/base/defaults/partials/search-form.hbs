@@ -1,0 +1,17 @@
+<section class="search-form {{class}}">
+	<div class="search-form__wrapper inner">
+		<img class="search-form__image object-fit object-fit-cover" src="{{root}}{{image}}" alt="">
+		{{#if first}}
+			<h1 class="search-form__title">{{title}}</h1>
+		{{else}}
+			<h2 class="search-form__title">{{title}}</h2>
+		{{/if}}
+		<form class="search-form__form" role="search" method="get" action="/">
+			<label class="search-form__label">
+				<span class="screen-reader-text">Search for:</span>
+				<input class="search-form__input" type="search" placeholder="Type your question" value="" name="s">
+			</label>
+			<input class="search-form__submit" type="submit" value="{{#if value}}{{value}}{{else}}Search{{/if}}">
+		</form>
+	</div>
+</section>

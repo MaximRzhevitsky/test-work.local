@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{root}}assets/css/breadcrumb.css">
+<div class="breadcrumb">
+    <span>
+	    <span>
+		    <a href="#">Home</a>
+	    </span>
+	    {{#each ( stringToArray parents )}}
+		    {{#if this}}
+		    <span>
+			    <a href="#">{{this}}</a>
+		    {{/if}}
+	    {{/each}}
+	    <span class="breadcrumb_last" aria-current="page">
+		    {{#if last}}{{last}}{{else}}{{pageTitle}}{{/if}}
+	    </span>
+	    {{#each ( stringToArray parents )}}
+		    {{#if this}}
+		    </span>
+		    {{/if}}
+	    {{/each}}
+    </span>
+</div>

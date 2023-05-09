@@ -1,0 +1,6 @@
+<a class="menu-cart-link {{modificator}}" href="#" role="button" aria-expanded="false">
+	{{#if linkText}}{{linkText}}{{else}}Cart{{/if}}
+	{{#ifequal total ''}}{{else}}
+		<span class="cart-total">{{>price price=total currency=currency}}</span>{{/ifequal}}
+	{{#ifequal count ''}}{{else}} <span class="cart-count">{{count}}</span>{{/ifequal}}
+</a>

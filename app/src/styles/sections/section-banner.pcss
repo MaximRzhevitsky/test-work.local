@@ -1,0 +1,24 @@
+@import "../variables-and-mixins.pcss";
+
+.section-banner {
+	position: relative;
+	padding-top: 60px;
+	padding-bottom: 70px;
+	background-color: $color-colors-element;
+	text-align: center;
+
+	@media (--lg) {
+		padding-top: 100px;
+		padding-bottom: 110px;
+	}
+
+	.title {
+		@include text-style-text-headline-1;
+
+		margin-bottom: 20px;
+	}
+
+	.sub-title {
+		margin-bottom: 40px;
+	}
+}

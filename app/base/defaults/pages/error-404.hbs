@@ -1,0 +1,32 @@
+---
+pageTitle: 'Error 404: Page not found'
+---
+
+<!-- These styles are not for blocks, but for the entire page. -->
+<link rel="stylesheet" href="{{root}}assets/css/blog-and-defaults-pages.css">
+
+<section class="error-404">
+	<div class="inner">
+		<div class="error-404__image">
+			<img src="{{root}}assets/images/error-with-a-cute-animal.svg" alt="">
+		</div>
+		<h1 class="error-404__title">Oops, you seemed to have found <br/> a page that does not exist</h1>
+		<p class="error-404__text">Thanks for noticing – we’re going to fix it up and have things back to normal soon.</p>
+		<h2 class="error-404__subtitle">In the meantime, let's help you find something else</h2>
+		<div class="error-404__links">
+			<a class="error-404__link" href="#">Shop New Arrivals</a>
+			<a class="error-404__link" href="#">Shop Best Sellers</a>
+			<a class="error-404__link" href="#">Check out our latest articles</a><br>
+			<a class="error-404__link" href="#">Shop New Arrivals</a>
+			<a class="error-404__link" href="#">Shop Best Sellers</a>
+			<a class="error-404__link" href="#">Check out our latest articles</a>
+		</div>
+		<p>
+			<a class="error-404__button btn" href="#">Back to Home</a>
+		</p>
+	</div>
+	{{>search-form
+		class="search-form_error-404-page"
+		title="Search"
+		value="Go!"}}
+</section>

@@ -1,0 +1,51 @@
+WOOCOMMERCE_ENABLED: true
+JQUERY_ENABLED: false
+PORT: 8000
+PATHS:
+  appDist: "dist"
+  markupDist: "../www"
+  fonts: "src/fonts/fonts.json"
+  assets:
+    - "src/assets/**/*"
+  scripts:
+    - "base/defaults/scripts/jquery/jquery.js"
+    - "src/scripts/main.js"
+  scriptsModules:
+    - "base/defaults/scripts/modules/*.js"
+    - "src/scripts/modules/*.js"
+  scriptsLibs:
+    - "base/defaults/scripts/libs/*.js"
+    - "src/scripts/libs/*.js"
+  scriptsNPMProxy:
+    - "base/defaults/scripts/npm-proxy/*.js"
+    - "src/scripts/npm-proxy/*.js"
+  styles:
+    - "base/defaults/styles/*.pcss"
+    - "base/defaults/styles/blocks/*.pcss"
+    - "src/styles/{main,blog-and-defaults-pages,gravity-forms}.pcss"
+    - "src/styles/sections/*.pcss"
+    - "src/styles/blocks/*.pcss"
+  watch:
+    pages:
+      - "src/pages/**/*.hbs"
+      - "base/{defaults,woocommerce}/pages/**/*.hbs"
+    pagesDependencies:
+      - "src/{layouts,partials,helpers}/**/*.{hbs,js}"
+      - "base/{defaults,woocommerce}/{layouts,partials,helpers}/**/*.{hbs,js}"
+    scripts:
+      - "!base/{defaults,woocommerce}/scripts/modules/*.js"
+      - "!src/scripts/modules/*.js"
+      - "base/{defaults,woocommerce}/scripts/**/*.js"
+      - "src/scripts/**/*.js"
+    styles:
+      - "base/defaults/styles/parts/*.pcss"
+      - "base/woocommerce/styles/*.pcss"
+      - "src/styles/**/*.pcss"
+  WordPressTheme: "../wp-content/themes/child-theme"
+  WooCommerce:
+    fonts: "base/woocommerce/fonts/fonts.css"
+    scripts:
+      - "src/scripts/woocommerce.js"
+    styles:
+      - "src/styles/woocommerce-main.pcss"
+      - "src/styles/woocommerce-pages.pcss"

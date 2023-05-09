@@ -1,0 +1,85 @@
+.woocommerce-pagination {
+	ul.page-numbers {
+		display: flex;
+		justify-content: center;
+		gap: 5px;
+		margin: 0;
+		list-style: none;
+
+		@media (--xs) {
+			gap: 10px;
+		}
+
+		.page-numbers:not(.prev):not(.next) {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			line-height: 33px;
+			color: $woo-color-text-main;
+			border: 1px solid $woo-color-text-main;
+			text-align: center;
+			text-decoration: none;
+			transition: background 0.3s, color 0.3s;
+
+			@media (--xs) {
+				width: 50px;
+				height: 50px;
+				line-height: 48px;
+			}
+
+			&:--enter,
+			&.current {
+				font-weight: 600;
+				font-size: 18px;
+				color: $woo-color-colors-white;
+				background: $woo-color-colors-main;
+				border: 1px solid $woo-color-colors-main;
+			}
+		}
+
+		.prev,
+		.next {
+			font-size: 0;
+			line-height: 33px;
+			color: $woo-color-text-main;
+			text-decoration: none;
+			transition: color 0.3s;
+
+			@media (--xs) {
+				line-height: 48px;
+			}
+
+			@media (--md) {
+				font-size: 16px;
+			}
+
+			&:--enter {
+				color: $woo-color-colors-main;
+			}
+		}
+
+		.prev {
+			@media (--md) {
+				padding-right: 20px;
+			}
+
+			&::before {
+				content: "\01F850";
+				font-size: 16px;
+				padding-right: 10px;
+			}
+		}
+
+		.next {
+			@media (--md) {
+				padding-left: 20px;
+			}
+
+			&::after {
+				content: "\01F852";
+				font-size: 16px;
+				padding-left: 10px;
+			}
+		}
+	}
+}

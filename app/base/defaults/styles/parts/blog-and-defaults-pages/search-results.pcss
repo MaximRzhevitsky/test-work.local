@@ -1,0 +1,47 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.search-results {
+	&:not(body.search-results) {
+		padding-top: 20px;
+		padding-bottom: 60px;
+
+		@media (--lg) {
+			padding-top: 40px;
+			padding-bottom: 130px;
+		}
+	}
+
+	&__results {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5px 30px;
+		margin-bottom: 15px;
+
+		@media (--sm) {
+			margin-bottom: 40px;
+			justify-content: space-between;
+		}
+	}
+
+	&__title,
+	&__pages {
+		@include text-style-text-text-2;
+
+		width: 100%;
+		margin-bottom: 0;
+
+		@media (--sm) {
+			width: auto;
+		}
+	}
+
+	&__for {
+		color: $color-text-second;
+	}
+
+	&__wrapper {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 40px;
+	}
+}

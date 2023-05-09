@@ -1,0 +1,23 @@
+2023-05-08T21:59:29+00:00 warning fopen(D:\OpenServer\domains\test-work.local/wp-content/webp-express/config/config.json):
+                                  Failed to open stream: No such file or directory
+
+                                  USER: 1
+                                  URL: wp-admin/async-upload.php
+                                  REFERRER: wp-admin/post.php?post=5&action=edit
+                                  TRACE:
+                                  wp-admin/async-upload.php:33            wp_ajax_upload_attachment()
+                                  ...dmin/includes/ajax-actions.php:2598  media_handle_upload()
+                                  wp-admin/includes/media.php:303         wp_handle_upload()
+                                  wp-admin/includes/file.php:1082         _wp_handle_upload()
+                                  wp-admin/includes/file.php:1050         apply_filters( "wp_handle_upload" )
+                                  wp-includes/class-wp-hook.php:308       WebPExpress\HandleUploadHooks::handleUpload()
+                                  .../classes/HandleUploadHooks.php:66    WebPExpress\HandleUploadHooks::convertIf()
+                                  .../classes/HandleUploadHooks.php:25    WebPExpress\Config::loadConfigAndFix()
+                                  ...express/lib/classes/Config.php:286   WebPExpress\Config::loadConfig()
+                                  ...express/lib/classes/Config.php:15    WebPExpress\FileHelper::loadJSONOptions()
+                                  ...ess/lib/classes/FileHelper.php:371   WebPExpress\FileHelper::loadFile()
+                                  ...ess/lib/classes/FileHelper.php:226   fopen()
+                                  N/A                                     WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125   WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150   WLD_Log_Base::get_log_trace_lines()
+

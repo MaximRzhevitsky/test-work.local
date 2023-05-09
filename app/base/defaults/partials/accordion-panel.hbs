@@ -1,0 +1,11 @@
+<div class="accordion__panel"
+	id='accordion-panel-{{accordionIndex}}'
+	 role="region"
+	 aria-labelledby='accordion-btn-{{accordionIndex}}'
+	{{#if active}}
+
+	{{else}}
+		hidden=""
+	 {{/if}}>
+	{{>@partial-block}}
+</div>

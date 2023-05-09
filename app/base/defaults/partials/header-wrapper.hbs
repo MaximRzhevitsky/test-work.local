@@ -1,0 +1,22 @@
+<header class="page-header{{#if (isWoocommerce)}} page-header_woocommerce{{/if}}">
+	<div class="page-header__wrapper">
+		{{#if (isWoocommerce)}}
+			<button class="open-mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-1'></span>
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-2'></span>
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-3'></span>
+				<span class="screen-reader-text">Menu</span>
+			</button>
+			{{>header}}
+			{{>menu-cart-link linkText='My Cart' total='' count=3 modificator="menu-cart-link_hide-on-desktop"}}
+		{{else}}
+			{{>header}}
+			<button class="open-mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-1'></span>
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-2'></span>
+				<span class='open-mobile-menu-button__item open-mobile-menu-button__item_style-3'></span>
+				<span class="screen-reader-text">Menu</span>
+			</button>
+		{{/if}}
+	</div>
+</header>

@@ -1,0 +1,50 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	flex: 1 0 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote {
+	@include removed-top-button-margins;
+}
+
+iframe,
+img,
+svg,
+input,
+video,
+select,
+textarea {
+	max-width: 100%;
+	height: auto;
+}
+
+button,
+[type="submit"],
+[type="button"] {
+	font-size: 16px;
+	cursor: pointer;
+
+	&:disabled {
+		@include disabled;
+	}
+}

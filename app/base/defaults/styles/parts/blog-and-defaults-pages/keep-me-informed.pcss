@@ -1,0 +1,110 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.keep-me-informed {
+	background-color: $color-colors-element;
+	text-align: center;
+	padding: 70px 0;
+
+	@media (--lg) {
+		padding: 100px 0 70px;
+	}
+
+	&__title {
+		@include text-style-text-headline-1;
+
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		@include text-style-text-text-main;
+
+		margin-bottom: 30px;
+	}
+
+	form {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto 60px;
+
+		.gform_body {
+			width: 100%;
+
+			@media (--sm) {
+				width: calc(100% - 230px);
+			}
+
+			.gform_fields {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 10px;
+
+				.gfield {
+					width: 100%;
+
+					@media (--sm) {
+						width: calc(50% - 10px);
+					}
+
+					input {
+						background: transparent;
+					}
+				}
+			}
+		}
+
+		.gform_footer {
+			width: 100%;
+
+			@media (--sm) {
+				width: 210px;
+			}
+
+			.button {
+				width: 100%;
+				background: transparent;
+				color: $color-colors-main;
+
+				&:--enter {
+					background: $color-colors-main;
+					color: $color-colors-white;
+				}
+			}
+		}
+	}
+
+	&__subtitle {
+		position: relative;
+		line-height: 34px;
+		margin-bottom: 25px;
+
+		@media (--xs) {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: $color-text-main;
+			}
+		}
+	}
+
+	&__subtitle-text {
+		@include text-style-text-headline-3;
+
+		background-color: $color-colors-element;
+		position: relative;
+		z-index: 1;
+
+		@media (--xs) {
+			padding: 0 34px;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@import "../variables-and-mixins.pcss";
+
+.section-test-three {
+	padding-top: 40px;
+	padding-bottom: 0;
+
+	.title {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.item {
+			width: 100%;
+			margin-bottom: 40px;
+
+			@media (--md) {
+				width: 31%;
+			}
+
+			.img {
+				margin-bottom: 15px;
+			}
+
+			p {
+				margin-bottom: 15px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

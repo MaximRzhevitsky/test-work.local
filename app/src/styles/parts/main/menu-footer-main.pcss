@@ -1,0 +1,53 @@
+@import "../../variables-and-mixins.pcss";
+
+.menu-footer-main {
+	width: 100%;
+
+	@media (--lg) {
+		width: 66%;
+	}
+
+	&__items {
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		&_level_1 {
+			margin-bottom: 20px;
+			width: 48%;
+
+			@media (--md) {
+				width: auto;
+			}
+		}
+
+		&:not(&_level_1) {
+			margin-bottom: 10px;
+			width: 100%;
+		}
+	}
+
+	&__link {
+		color: $color-colors-white;
+
+		&_level_1 {
+			font-size: 18px;
+			position: relative;
+		}
+
+		&:not(&_level_1) {
+			font-size: 16px;
+		}
+	}
+
+	&__sub-items {
+		margin: 20px 0 0;
+	}
+
+	&__sub-items &__sub-items {
+		padding-left: 15px;
+	}
+}

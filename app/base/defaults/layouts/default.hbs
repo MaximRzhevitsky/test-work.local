@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{pageTitle}}</title>
+	<script src="{{root}}assets/fonts/fonts-all.js" type="module" async></script>
+	<link rel="stylesheet" href="{{root}}assets/css/main.css">
+	{{#if (isWoocommerce)}}
+		<link rel="stylesheet" href="{{root}}assets/css/woocommerce-main.css">
+	{{/if}}
+</head>
+<body class="{{#ifpage 'home'}}home-page {{/ifpage}}{{bodyClass}}">
+
+	<a class="screen-reader-text" href="#page-main">Skip to content</a>
+
+	{{>header-wrapper}}
+
+	{{#unlesspage 'home' }}{{>breadcrumb}}{{/unlesspage}}
+
+	<main id="page-main">
+		{{>body}}
+	</main>
+
+	{{>footer}}
+
+	{{>mobile-menu-wrapper}}
+
+	{{#if (isWoocommerce)}}
+		{{>menu-cart count=3}}
+	{{/if}}
+
+	{{>cookies-notice}}
+
+	<script id='theme-init-js-extra'>
+		window.theme = {
+			"url": "file:" === location.protocol ? '{{root}}' : location.pathname.startsWith( "/www/" ) ? "/www/" : "/",
+			"ajaxUrl": "\/wp-admin\/admin-ajax.php",
+			"ajaxNonce": "d0b7158aec",
+			"googleMapsApiKey": "AIzaSyC1BgSVg5b7vMGqbjalTl_0Rb9LmsrMpWE"
+		};
+		window.theme_i18n = { "more": "View More", "less": "View Less" };
+	</script>
+	<script src="{{root}}assets/js/main.js" defer></script>
+	{{#if (isJQuery)}}
+		<script src="{{root}}assets/js/jquery.js"></script>
+	{{/if}}
+	{{#if (isWoocommerce)}}
+		<script src="{{root}}assets/js/woocommerce.js" defer></script>
+	{{/if}}
+</body>
+</html>

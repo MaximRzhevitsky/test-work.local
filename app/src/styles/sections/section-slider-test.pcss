@@ -1,0 +1,71 @@
+@import "../variables-and-mixins.pcss";
+
+.section-slider-test {
+	padding: 70px 0;
+	max-width: 1920px;
+	margin: 0 auto;
+
+	.tns {
+		&-outer {
+			position: relative;
+		}
+
+		&-controls {
+			width: 100%;
+			max-width: 1170px;
+			display: flex;
+			justify-content: flex-end;
+			gap: 30px;
+			margin: 0 auto 30px;
+
+			button {
+				width: 50px;
+				height: 50px;
+				color: $color-colors-white;
+				background: $color-colors-main;
+				border-radius: 50%;
+				border: none;
+				transition: background 0.3s;
+
+				&:--enter {
+					background: $color-element-hover;
+				}
+			}
+		}
+
+		&-slider {
+			margin-bottom: 50px;
+		}
+
+		&-item {
+			img {
+				width: 100%;
+			}
+		}
+
+		&-nav {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			height: 14px;
+
+			button {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: $color-colors-light-gray;
+				border: none;
+				padding: 0;
+				cursor: pointer;
+				transition: 0.3s;
+
+				&.tns-nav-active {
+					width: 14px;
+					height: 14px;
+					background: $color-colors-main;
+				}
+			}
+		}
+	}
+}

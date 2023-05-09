@@ -1,0 +1,50 @@
+@import "../variables-and-mixins.pcss";
+
+.section-test-four {
+	padding: 40px 0;
+	background-color: rgb(0 0 0 / 15%);
+
+	.title {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@media (--lg) {
+			margin-left: -1%;
+			margin-right: -1%;
+			justify-content: inherit;
+		}
+
+		.item {
+			width: 100%;
+			margin-bottom: 40px;
+
+			@media (--sm) {
+				width: 48%;
+			}
+
+			@media (--lg) {
+				width: 31.333%;
+				margin-left: 1%;
+				margin-right: 1%;
+			}
+
+			.img {
+				margin-bottom: 15px;
+			}
+
+			p {
+				margin-bottom: 15px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

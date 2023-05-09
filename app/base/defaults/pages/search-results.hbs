@@ -1,0 +1,35 @@
+---
+pageTitle: You searched for Incididun
+---
+
+<!-- These styles are not for blocks, but for the entire page. -->
+<link rel="stylesheet" href="{{root}}assets/css/blog-and-defaults-pages.css">
+
+{{>search-form
+	class="search-form_search-results-page"
+	image="assets/images/search-result-bg.jpg"
+	title="Search"
+	first="true"
+}}
+
+<section class="search-results">
+	<div class="inner">
+		<div class="search-results__results">
+			<h2 class="search-results__title">Search Results for: <span class="search-results__for">Incididun</span></h2>
+			<p class="search-results__pages">Showing 1 to 10 of 12 results</p>
+		</div>
+		<ul class="search-results__wrapper">
+			{{>search-result-item index="1"}}
+			{{>search-result-item index="2"}}
+			{{>search-result-item index="3"}}
+			{{>search-result-item index="4"}}
+			{{>search-result-item index="5"}}
+			{{>search-result-item index="6"}}
+			{{>search-result-item index="7"}}
+			{{>search-result-item index="8"}}
+			{{>search-result-item index="9"}}
+			{{>search-result-item index="10"}}
+		</ul>
+		{{>pagination}}
+	</div>
+</section>

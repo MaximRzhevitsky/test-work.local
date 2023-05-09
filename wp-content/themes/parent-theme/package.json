@@ -1,0 +1,12 @@
+{
+    "name": "parent-theme",
+    "devDependencies": {
+        "@wordpress/eslint-plugin": "^13.2.0",
+        "eslint": "8.22.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:@wordpress/eslint-plugin/recommended"
+        ]
+    }
+}

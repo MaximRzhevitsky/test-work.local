@@ -1,0 +1,1 @@
+export default function e(e){/complete|interactive|loaded/.test(document.readyState)?e():document.addEventListener("DOMContentLoaded",e,!1)}

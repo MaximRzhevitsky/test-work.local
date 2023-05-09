@@ -1,0 +1,120 @@
+@import "../../variables-and-mixins.pcss";
+
+.menu-header-main {
+	display: none;
+
+	@media (--lg) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+
+		&__items {
+			display: flex;
+			align-items: center;
+		}
+
+		&__item {
+			&_level_1 {
+				display: inline-block;
+				position: relative;
+
+				li {
+					display: block;
+					position: relative;
+				}
+
+				&:not(:last-child) {
+					margin-right: 20px;
+
+					@media (--xxl) {
+						margin-right: 30px;
+					}
+				}
+
+				&:not(:first-child) {
+					margin-left: 20px;
+
+					@media (--xxl) {
+						margin-left: 30px;
+					}
+				}
+
+				> [role="menuitem"] {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&__link {
+			display: inline-block;
+			font-size: 16px;
+			font-weight: 600;
+			color: $color-colors-white;
+
+			&:--enter {
+				text-decoration: underline;
+			}
+
+			&_current {
+				color: $color-colors-main;
+			}
+
+			&_level_1 {
+				/* noinspection CssInvalidFunction */
+
+				&[aria-haspopup] {
+					padding-right: 20px;
+
+					/* prettier-ignore */
+					background: svg-load("../../../../base/defaults/images/svg-load/link-arrow-icon.svg") center right no-repeat;
+				}
+			}
+
+			&:not(&_level_1) {
+				width: 100%;
+				padding: 8px 29px;
+
+				/* noinspection CssInvalidFunction */
+
+				&[aria-haspopup] {
+					/* prettier-ignore */
+					background: svg-load("../../../../base/defaults/images/svg-load/link-arrow-icon.svg") center right 20px no-repeat;
+				}
+			}
+		}
+
+		&__sub-items {
+			display: none;
+			list-style: none;
+			width: 250px;
+			position: absolute;
+			z-index: 99;
+			padding: 20px 0;
+			background-color: $color-bg-custom;
+			box-shadow: 0 5px 4px rgb(0 0 0 / 10%);
+			margin: 0;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -20px;
+				bottom: 100%;
+				left: 0;
+				right: 0;
+			}
+
+			&_level_1.open {
+				display: block;
+				top: 35px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			&.open &.open {
+				display: block;
+				top: 0;
+				left: 249px;
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.blog-post {
+	@media (--lg) {
+		margin-bottom: 50px;
+	}
+
+	&__item {
+		display: flex;
+		flex-wrap: wrap-reverse;
+		justify-content: space-between;
+		background-color: $color-colors-white;
+	}
+
+	&__thumbnail {
+		width: 100%;
+		display: flex;
+		max-height: 400px;
+
+		@media (--lg) {
+			width: 57%;
+			min-height: 400px;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media (--less-lg) {
+			width: 100%;
+			padding: 30px 20px;
+		}
+	}
+
+	&__categories {
+		margin-bottom: 20px;
+		order: 1;
+	}
+
+	&__posted {
+		@include text-style-text-text-2;
+
+		color: #a8aaba;
+		margin-bottom: 20px;
+		order: 2;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 35px;
+		line-height: 49px;
+		margin-bottom: 20px;
+		order: 3;
+	}
+
+	&__except {
+		@include text-style-text-text-main;
+
+		font-weight: 400;
+		color: $color-colors-second;
+		margin-bottom: 0;
+		order: 4;
+	}
+}

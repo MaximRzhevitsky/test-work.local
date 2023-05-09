@@ -1,0 +1,1 @@
+import{isEnqueue as e,enqueueScript as s}from"./scripts.js";window.addEventListener("load",(()=>{const t=document.querySelector("#theme-delay-scripts-js"),o=JSON.parse(t.dataset.scripts),r=JSON.parse(t.dataset.dependencies);if(o)for(const t in o)setTimeout((()=>{for(const n of o[t])e(n.handle)||s(n,r)}),parseInt(t))}));

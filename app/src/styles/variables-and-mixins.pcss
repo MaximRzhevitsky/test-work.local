@@ -1,0 +1,149 @@
+@import "../../base/defaults/styles/mixins.pcss";
+
+/* Variables. */
+$font-family-global: "Barlow", sans-serif;
+$border-radius-global: 0;
+$max-width-main-inner: 1200px; /* your width and +30px */
+$color-bg-custom: #232337;
+$height-element: 60px;
+
+/* CSSGen figma plugin */
+$color-text-main: rgb(40 40 40 / 100%);
+$color-text-second: rgba(0 148 255 / 100%);
+$color-colors-main: rgb(255 50 50 / 100%);
+$color-colors-second: rgb(35 35 55 / 100%);
+$color-colors-white: rgb(255 255 255 / 100%);
+$color-colors-element: rgb(249 253 255 / 100%);
+$color-colors-light-gray: rgb(219 219 219 / 100%);
+$color-colors-89: rgb(137 137 137 / 100%);
+
+$color-element-hover: rgba(255 78 78 / 100%);
+
+@mixin text-style-text-headline-1 {
+	font-size: 35px;
+	font-family: Barlow, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 49px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-headline-2 {
+	font-size: 24px;
+	font-family: Barlow, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 34px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-headline-3 {
+	font-size: 28px;
+	font-family: Barlow, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 34px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-links {
+	font-size: 18px;
+	font-family: Barlow, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 25px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-text-main {
+	font-size: 18px;
+	font-family: Barlow, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 27px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-text-2 {
+	font-size: 16px;
+	font-family: Barlow, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 24px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-button-semi {
+	font-size: 18px;
+	font-family: Barlow, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 25px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-text-button {
+	font-size: 18px;
+	font-family: Barlow, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 25px;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin btn {
+	@include focus;
+	@include text-style-text-links;
+
+	display: inline-block;
+	height: $height-element;
+	line-height: calc($height-element - 2px);
+	padding: 0 33px;
+	color: $color-colors-white;
+	background: $color-colors-main;
+	border-radius: $border-radius-global;
+	border: 1px solid $color-colors-main;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.3s;
+
+	&:--enter {
+		background: $color-element-hover;
+		border: 1px solid $color-element-hover;
+		text-decoration: none;
+	}
+
+	&[disabled="disabled"] {
+		background: $color-colors-light-gray;
+		border: 1px solid $color-colors-light-gray;
+		color: $color-colors-89;
+		cursor: default;
+	}
+}
+
+@mixin input {
+	@include focus;
+	@include text-style-text-text-main;
+
+	display: block;
+	width: 100%;
+	height: $height-element;
+	border-radius: $border-radius-global;
+	border: 1px solid $color-text-main;
+	background: transparent;
+	color: $color-text-main;
+	padding: 18px 30px 13px;
+
+	&[aria-invalid="true"] {
+		border: 1px solid $color-colors-main;
+	}
+}

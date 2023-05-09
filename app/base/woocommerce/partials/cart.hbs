@@ -1,0 +1,188 @@
+<!--suppress HtmlFormInputWithoutLabel, HtmlDeprecatedAttribute -->
+<div class="woocommerce-section cart-section">
+	<div class="inner">
+		<div class="woocommerce">
+			{{#if count}}
+				<div class="woocommerce-notices-wrapper">
+					<div class="woocommerce-message" role="alert">
+						“70% Isopropyl Alcohol (IPA)” removed.
+						<a href="#" class="restore-item">Undo?</a>
+						<button type="button" class="close"></button>
+					</div>
+				</div>
+				<form class="woocommerce-cart-form" action="#" method="post">
+					<h2>My Cart</h2>
+					<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+						   cellspacing="0">
+						<thead>
+						<tr>
+							<th class="product-remove">&nbsp;</th>
+							<th class="product-thumbnail">&nbsp;</th>
+							<th class="product-name">Product</th>
+							<th class="product-price">Price</th>
+							<th class="product-quantity">Quantity</th>
+							<th class="product-subtotal">Subtotal</th>
+						</tr>
+						</thead>
+						<tbody>
+						{{>cart-item image="https://dummyimage.com/100x100" index=1}}
+						{{>cart-item image="https://dummyimage.com/100x80" index=2}}
+						{{>cart-item image="https://dummyimage.com/100x100" index=3}}
+						{{>cart-item image="https://dummyimage.com/80x100" index=4}}
+						{{>cart-item image="https://dummyimage.com/100x100" index=5}}
+						<tr>
+							<td colspan="6" class="actions">
+								<div class="coupon">
+									<label for="coupon_code">Coupon:</label>
+									<input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
+										   placeholder="Coupon code" />
+									<button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply
+										coupon
+									</button>
+								</div>
+								<button type="submit" class="button" name="update_cart" value="Update cart">Update
+									cart
+								</button>
+								<input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce"
+									   value="" />
+								<input type="hidden" name="_wp_http_referer" value="" />
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</form>
+				<div class="cart-collaterals">
+					<div class="cart_totals ">
+						<h2>Cart totals</h2>
+						<table cellspacing="0" class="shop_table shop_table_responsive">
+							<tr class="cart-subtotal">
+								<th>Subtotal</th>
+								<td data-title="Subtotal">
+									{{>price price=15.00}}
+								</td>
+							</tr>
+							<tr class="woocommerce-shipping-totals shipping">
+								<th>Shipping</th>
+								<td data-title="Shipping">
+									<ul id="shipping_method" class="woocommerce-shipping-methods">
+										<li>
+											<input type="radio" name="shipping_method[0]" data-index="0"
+												   id="shipping_method_0_flat_rate1"
+												   value="flat_rate:1" class="shipping_method" checked='checked' />
+											<label for="shipping_method_0_flat_rate1">Flat
+												rate: {{>price price=99.55}}</label>
+										</li>
+										<li>
+											<input type="radio" name="shipping_method[0]" data-index="0"
+												   id="shipping_method_0_local_pickup2"
+												   value="local_pickup:2" class="shipping_method" />
+											<label for="shipping_method_0_local_pickup2">Local
+												pickup: {{>price price=16.99}}</label>
+										</li>
+										<li>
+											<input type="radio" name="shipping_method[0]" data-index="0"
+												   id="shipping_method_0_free_shipping3"
+												   value="free_shipping:3" class="shipping_method" />
+											<label for="shipping_method_0_free_shipping3">Free shipping</label>
+										</li>
+									</ul>
+									<p class="woocommerce-shipping-destination">
+										Shipping to <strong>2118 Abrams Rd, Washington, TX 03280</strong>.
+									</p>
+									<form class="woocommerce-shipping-calculator" action="#" method="post">
+										<a href="#" class="shipping-calculator-button">Change address</a>
+										<section class="shipping-calculator-form" style="display: none;">
+											<p class="form-row form-row-wide" id="calc_shipping_country_field">
+												<label for="calc_shipping_country">Country / region...
+													<abbr class="required" title="required">*</abbr></label>
+												<select name="calc_shipping_country" id="calc_shipping_country"
+														class="country_to_state country_select"
+														rel="calc_shipping_state">
+													{{>country-options}}
+												</select>
+											</p>
+											<p class="form-row form-row-wide" id="calc_shipping_state_field">
+												<label for="calc_shipping_state">State / Country
+													<abbr class="required" title="required">*</abbr></label>
+												<span>
+                          <select name="calc_shipping_state" class="state_select" id="calc_shipping_state"
+								  data-placeholder="State / County">
+							  {{>states-options}}
+						  </select>
+                        </span>
+											</p>
+											<p class="form-row form-row-wide" id="calc_shipping_city_field">
+												<label for="calc_shipping_city">City<abbr class="required"
+																						  title="required">*</abbr></label>
+												<input type="text" class="input-text" value="" placeholder=""
+													   name="calc_shipping_city"
+													   id="calc_shipping_city" />
+											</p>
+											<p class="form-row form-row-wide" id="calc_shipping_postcode_field">
+												<label for="calc_shipping_postcode">Postcode / ZIP<abbr class="required"
+																										title="required">*</abbr></label>
+												<input type="text" class="input-text" value="" placeholder=""
+													   name="calc_shipping_postcode" id="calc_shipping_postcode" />
+											</p>
+											<p class="form-row form-row-wide" id="calc_shipping_address_1_field">
+												<label for="calc_shipping_address_1">House number and street name
+													<abbr class="required" title="required">*</abbr></label>
+												<input type="text" class="input-text " value="" placeholder=""
+													   name="calc_shipping_address_1" id="calc_shipping_address_1">
+											</p>
+											<p>
+												<button type="submit" name="calc_shipping" value="1" class="button">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+														 viewBox="0 0 16 16" fill="none">
+														<path
+															d="M13.7529 0.510057L13.7627 2.45457C11.6913 0.30517 8.54917 -0.54084 5.62905 0.36551C2.28684 1.40287 0.00401041 4.4967 0.000227118 7.99514C-0.0175364 8.67674 1.01265 8.68077 1.00021 7.99911C1.00361 4.93447 2.9956 2.23063 5.92396 1.32172C8.59093 0.493949 11.4593 1.33552 13.2647 3.39809L10.8848 3.41075C10.2175 3.41434 10.2214 4.41548 10.8888 4.41182L14.2725 4.3933C14.5373 4.39185 14.7731 4.17249 14.7715 3.8874L14.753 0.506218C14.7514 0.222317 14.5231 -0.00743421 14.2438 0.000184147C13.9646 0.00780254 13.7515 0.235316 13.7529 0.510057ZM14.9999 8.001C14.9966 11.0656 13.0045 13.7695 10.0762 14.6784C7.40922 15.5062 4.54088 14.6646 2.73547 12.602L5.11532 12.5894C5.78262 12.5857 5.7787 11.5846 5.11137 11.5883C3.98346 11.5945 1.96448 11.6055 1.72763 11.6068C1.46288 11.6083 1.22705 11.8276 1.22862 12.1127L1.24714 15.4939C1.2487 15.7778 1.47703 16.0076 1.7608 15.9998C2.03541 15.9922 2.2485 15.7647 2.24712 15.49C2.24391 14.8418 2.2373 13.5455 2.2373 13.5455C4.30875 15.6949 7.45083 16.5409 10.371 15.6345C13.7132 14.5972 15.996 11.5033 15.9998 8.0049C16.0087 7.6641 15.7555 7.49315 15.5018 7.49216C15.2481 7.49116 14.9937 7.66014 14.9999 8.001Z" />
+													</svg>
+													Update
+												</button>
+											</p>
+											<input type="hidden" id="woocommerce-shipping-calculator-nonce"
+												   name="woocommerce-shipping-calculator-nonce" value="" />
+											<input type="hidden" name="_wp_http_referer" value="" />
+										</section>
+									</form>
+								</td>
+							</tr>
+							<tr class="tax-rate tax-rate-tax-1">
+								<th>Tax</th>
+								<td data-title="Tax">{{>price price=9.45}}</td>
+							</tr>
+							<tr class="order-total">
+								<th>Total</th>
+								<td data-title="Total"><strong>{{>price price=124.00}}</strong></td>
+							</tr>
+						</table>
+						<div class="wc-proceed-to-checkout">
+							<a href="#" class="checkout-button button alt wc-forward">Proceed to checkout</a>
+						</div>
+						<div class="accepting-payment-systems">
+							<p>We Accept:</p>
+							<div class="block-images">
+								<img width="34" height="26" src="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/visa.png" class="" alt="" decoding="async" loading="lazy" srcset="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/visa.png 34w, https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/visa-30x23.png 30w" sizes="(max-width: 34px) 100vw, 34px">											<img width="34" height="26" src="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/mastercard.png" class="" alt="" decoding="async" loading="lazy" srcset="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/mastercard.png 34w, https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/mastercard-30x23.png 30w" sizes="(max-width: 34px) 100vw, 34px">											<img width="34" height="26" src="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/amex.png" class="" alt="" decoding="async" loading="lazy" srcset="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/amex.png 34w, https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/amex-30x23.png 30w" sizes="(max-width: 34px) 100vw, 34px">											<img width="34" height="25" src="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/ApplePay.png" class="" alt="" decoding="async" loading="lazy" srcset="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/ApplePay.png 34w, https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/ApplePay-30x22.png 30w" sizes="(max-width: 34px) 100vw, 34px">											<img width="34" height="25" src="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/GooglePay.png" class="" alt="" decoding="async" loading="lazy" srcset="https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/GooglePay.png 34w, https://wldbasethemdev.wpengine.com/wp-content/uploads/2023/04/GooglePay-30x22.png 30w" sizes="(max-width: 34px) 100vw, 34px">									</div>
+						</div>
+					</div>
+				</div>
+			{{else}}
+				<div class="woocommerce-notices-wrapper"></div>
+				<p class="cart-empty woocommerce-info">Your cart is currently empty.</p>
+				<p class="return-to-shop"><a class="button wc-backward" href="#">Return to Shop </a></p>
+			{{/if}}
+		</div>
+	</div>
+</div>
+<script>
+	if (typeof window.initShippingCalculator === 'undefined') {
+		window.initShippingCalculator = true;
+		document.addEventListener('click', function (e) {
+			if (e.target && e.target.classList.contains('shipping-calculator-button')) {
+				e.preventDefault();
+				console.info(e.target.nextElementSibling);
+				e.target.nextElementSibling.style.display = e.target.nextElementSibling.style.display === 'none' ? '' : 'none';
+			}
+		});
+	}
+</script>

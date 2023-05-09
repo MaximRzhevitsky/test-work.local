@@ -1,0 +1,71 @@
+@custom-selector :--enter :hover, :focus, :focus-within;
+
+@mixin disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+@mixin focus {
+	&:focus {
+		outline: none;
+	}
+
+	&:focus-visible:not(.disabled-visual-focus) {
+		outline: 1px auto #000;
+	}
+}
+
+@mixin removed-top-button-margins {
+	margin-top: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+
+	&:focus {
+		background-color: #eee;
+		clip: auto !important;
+		clip-path: none;
+		color: #444;
+		display: block;
+		font-size: 16px;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/* Media queries desktop first (breakpoints). */
+@custom-media --less-xxl all and (width < 1280px);
+@custom-media --less-xl all and (width < 1152px);
+@custom-media --less-lg all and (width < 1024px);
+@custom-media --less-md all and (width < 768px);
+@custom-media --less-sm all and (width < 568px);
+@custom-media --less-xs all and (width < 412px);
+
+/* Media queries mobile first (breakpoints). */
+@custom-media --xxl all and (width >= 1280px);
+@custom-media --xl all and (width >= 1152px);
+@custom-media --lg all and (width >= 1024px);
+@custom-media --md all and (width >= 768px);
+@custom-media --sm all and (width >= 568px);
+@custom-media --xs all and (width >= 412px);

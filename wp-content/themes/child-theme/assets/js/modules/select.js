@@ -1,0 +1,1 @@
+import e from"../npm-proxy/tom-select.js";new e("#ex-checkbox-options",{plugins:["checkbox_options"]}),new e("#example-select",{create:!0,sortField:{field:"text",direction:"asc"}});

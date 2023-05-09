@@ -1,0 +1,17 @@
+<aside class="menu-cart" aria-hidden="true">
+	<div class="menu-cart__wrapper">
+		<div class="menu-cart__header">
+			<h2 class="menu-cart__title">Cart{{#ifequal count ''}}{{else}}<span class="menu-cart__count">{{count}} items</span>{{/ifequal}}</h2>
+			<button type="button" class="menu-cart__close" data-close aria-expanded="false">
+				<span class="screen-reader-text">Close cart</span>
+			</button>
+		</div>
+		{{#if count}}
+			{{>mini-cart}}
+		{{else}}
+			<div class="empty">
+				Empty Cart
+			</div>
+		{{/if}}
+	</div>
+</aside>

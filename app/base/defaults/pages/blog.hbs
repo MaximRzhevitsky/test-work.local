@@ -1,0 +1,205 @@
+---
+pageTitle: Blog page
+---
+
+<!-- These styles are not for blocks, but for the entire page. -->
+<link rel="stylesheet" href="{{root}}assets/css/blog-and-defaults-pages.css">
+<link rel="stylesheet" href="{{root}}assets/css/gravity-forms.css">
+
+<section class="blog-banner">
+	<div class="blog-banner__wrapper">
+		<div class="blog-banner__content">
+			<h1 class="blog-banner__title">Lorem ipsum</h1>
+			<p class="blog-banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra scelerisque ut ante venenatis metus,
+				nec cras facilisis. Eu arcu, tincidunt lectus faucibus laoreet.</p>
+			{{#> gform-form
+				showError=false
+				showConfirmation=false
+			}}
+				{{#> gform-body showError=showError}}
+					{{> gform-email
+						showError=showError
+						customClass=""
+						hideLabel=false
+						labelText="Email"
+						required=true
+						fieldSize="medium"
+						placeholderText=""
+					}}
+				{{/gform-body}}
+
+				{{> gform-footer
+					type="button"
+					text="Subscribe"
+				}}
+
+			{{/gform-form}}
+		</div>
+		<div class="blog-banner__image-wrap">
+			<img class="blog-banner__image" src="{{root}}assets/images/box-test-image.png" alt="">
+		</div>
+	</div>
+</section>
+
+<section class="blog-nav">
+	<div class="inner">
+		<h2 class="blog-nav__title"><span class="blog-nav__text">Topics</span></h2>
+		<div class="menu-blog">
+			<ul id="menu-blog-menu" class="menu-blog__items">
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1 menu-blog__item_current">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1 current-menu-item">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+				<li class="menu-blog__item menu-blog__item_level_1">
+					<a href="#" class="menu-blog__link menu-blog__link_level_1">Lorem ipsum</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="blog-content">
+	<div class="inner">
+		<div class="blog-content__wrapper">
+			<div class="blog-content__content">
+				<ul class="blog-items">
+					{{>blog-item image="assets/images/box-test-image.png" index=1}}
+					{{>blog-item image="assets/images/blog-test-image.jpg" index=2}}
+					{{>blog-item image="assets/images/box-test-image.png" index=3}}
+					{{>blog-item image="assets/images/blog-test-image.jpg" index=4}}
+					{{>blog-item image="assets/images/box-test-image.png" index=5}}
+					{{>blog-item image="assets/images/blog-test-image.jpg" index=6}}
+					{{>blog-item image="assets/images/box-test-image.png" index=7}}
+				</ul>
+				{{>pagination}}
+			</div>
+			<div class="blog-content__sidebar">
+				<div class="widget"><h2>Search</h2></div>
+				<div class="widget">
+					<form role="search" method="get" action="https://wldnwaddev.wpengine.com/"
+					      class="wp-block-search__button-inside wp-block-search__icon-button aligncenter wp-block-search">
+						<label for="wp-block-search__input-1" class="wp-block-search__label">Search</label>
+						<div class="wp-block-search__inside-wrapper " style="width: 100%">
+							<input type="search" id="wp-block-search__input-1" class="wp-block-search__input " name="s"
+							       value=""
+							       placeholder="" required="">
+							<button type="submit" class="wp-block-search__button  has-icon" aria-label="Search">
+								<svg id="search-icon" class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+									<path
+										d="M13.5 6C10.5 6 8 8.5 8 11.5c0 1.1.3 2.1.9 3l-3.4 3 1 1.1 3.4-2.9c1 .9 2.2 1.4 3.6 1.4 3 0 5.5-2.5 5.5-5.5C19 8.5 16.5 6 13.5 6zm0 9.5c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path>
+								</svg>
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="widget"><h2>Stay Connected</h2></div>
+				<div class="widget">
+					<div>
+						{{#> gform-form
+							showError=false
+							showConfirmation=false
+						}}
+							{{#> gform-body showError=showError}}
+								{{> gform-email
+									showError=showError
+									customClass=""
+									hideLabel=false
+									labelText="Email"
+									required=false
+									fieldSize="medium"
+									placeholderText=""
+									descriptionText=""
+								}}
+							{{/gform-body}}
+							{{> gform-footer
+								type="button"
+								text="Subscribe by Email"
+							}}
+						{{/gform-form}}
+					</div>
+				</div>
+				<div class="widget"><h2>Follow us</h2></div>
+				<div class="social-links">
+					<a href="#" class="social-links__link">
+						<img class="social-links__image" src="{{root}}assets/images/social-icons/instagram.svg" alt="">
+						<span class="social-links__text">Instagram</span>
+					</a>
+					<a href="#" class="social-links__link">
+						<img class="social-links__image" src="{{root}}assets/images/social-icons/facebook.svg" alt="">
+						<span class="social-links__text">Facebook</span>
+					</a>
+					<a href="#" class="social-links__link">
+						<img class="social-links__image" src="{{root}}assets/images/social-icons/linkedin.svg" alt="">
+						<span class="social-links__text">LinkedIn</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="keep-me-informed">
+	<div class="inner">
+		<h2 class="keep-me-informed__title">Stay in the Know</h2>
+		<p class="keep-me-informed__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Vitae elit sem volutpat laoreet dolor amet.
+		</p>
+		{{#> gform-form
+			showError=false
+			showConfirmation=false
+		}}
+			{{#> gform-body showError=showError}}
+				{{> gform-singleLineText
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Name"
+					required=false
+					fieldSize="medium"
+					placeholderText=""
+				}}
+
+				{{> gform-email
+					showError=showError
+					customClass=""
+					hideLabel=false
+					labelText="Email"
+					required=false
+					fieldSize="medium"
+					placeholderText=""
+				}}
+			{{/gform-body}}
+
+			{{> gform-footer
+				type="button"
+				text="Keep Me Informed"
+			}}
+
+		{{/gform-form}}
+		<h3 class="keep-me-informed__subtitle"><span class="keep-me-informed__subtitle-text">Follow us on Social!</span></h3>
+		<div class="social-links">
+			<a href="#" class="social-links__link">
+				<img class="social-links__image" src="{{root}}assets/images/social-icons/instagram.svg" alt="">
+				<span class="social-links__text">Instagram</span>
+			</a>
+			<a href="#" class="social-links__link">
+				<img class="social-links__image" src="{{root}}assets/images/social-icons/facebook.svg" alt="">
+				<span class="social-links__text">Facebook</span>
+			</a>
+			<a href="#" class="social-links__link">
+				<img class="social-links__image" src="{{root}}assets/images/social-icons/linkedin.svg" alt="">
+				<span class="social-links__text">LinkedIn</span>
+			</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,80 @@
+{{! Garvity forms List Field component https://docs.gravityforms.com/list-field/ https://docs.gravityforms.com/validation-errors/ }}
+
+<fieldset id="field_{{gFormIndex}}_{{gFormFieldIndex true}}"
+		  class="gfield gfield--width-full {{gformFieldErrorClass showError}} {{gformAddCustomClass
+			  customClass}} {{gformRequiredClass
+			  required}}  field_sublabel_below field_description_below {{gformHideLabel
+			  hideLabel}} gfield_visibility_visible"
+		  data-js-reload="field_{{gFormIndex}}_{{gFormFieldIndex}}"
+>
+	<legend class="gfield_label gfield_label_before_complex">
+		{{labelText}}{{#with required}}<span
+		class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span>{{/with}}
+	</legend>
+	<div class="ginput_container ginput_container_list ginput_list">
+		<div class="gfield_list gfield_list_container">
+			{{#if multiColumns}}
+				<div class="gfield_list_header">
+					{{#each ( stringToArray multiColumns "|")}}
+						<div class="gfield_header_item">{{this}}</div>
+					{{/each}}
+					<div class="gfield_header_item gfield_header_item--icons">&nbsp;</div>
+				</div>
+			{{/if}}
+			<div class="gfield_list_groups">
+				<div class="gfield_list_row_odd gfield_list_group">
+					{{#if multiColumns}}
+						{{#each ( stringToArray multiColumns "|")}}
+							<div class="gfield_list_group_item gfield_list_cell gfield_list_{{gFormFieldIndex}}_cell1"
+								 data-label="{{this}}">
+								<input
+									aria-invalid="false"
+									aria-required="true"
+									aria-label="{{this}}, Row 1"
+									data-aria-label-template="{{this}}, Row {0}"
+									type="text" name="input_{{gFormFieldIndex}}[]"
+									value="">
+							</div>
+						{{/each}}
+					{{else}}
+						<div class="gfield_list_group_item gfield_list_cell gfield_list_{{gFormFieldIndex}}_cell1">
+							<input aria-invalid="false"
+								   aria-required="true"
+								   aria-label="List, Row 1"
+								   data-aria-label-template="List, Row {0}"
+								   type="text"
+								   name="input_{{gFormFieldIndex}}[]"
+								   value="">
+						</div>
+					{{/if}}
+					<div class="gfield_list_icons">
+						<button type="button"
+								class="add_list_item"
+								aria-label="Add another row"
+								onclick="gformAddListItem(this, 0)">Add
+						</button>
+						<button type="button"
+								class="delete_list_item"
+								aria-label="Remove row 1"
+								data-aria-label-template="Remove row {0}"
+								onclick="gformDeleteListItem(this, 0)"
+								style="visibility:hidden;">Remove
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{#if descriptionText}}
+		<div class="gfield_description">{{descriptionText}}</div>
+	{{/if}}
+	{{#if showError}}
+		<div class="gfield_description validation_message">
+			{{#if customValidationText}}
+				{{customValidationText}}
+			{{else}}
+				This field is required.
+			{{/if}}
+		</div>
+	{{/if}}
+</fieldset>

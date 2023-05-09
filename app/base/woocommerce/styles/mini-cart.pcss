@@ -1,0 +1,112 @@
+$padding: 10px;
+
+.woocommerce-mini-cart {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: $woo-color-text-main;
+	font-family: $woo-font-family-global;
+	position: relative;
+	display: block;
+
+	.woocommerce-mini-cart-item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		position: relative;
+		text-align: left;
+		padding-bottom: 25px;
+		padding-left: calc($woo-thumbnail-size + 20px);
+		min-height: calc($woo-thumbnail-size + 25px);
+		width: 100%;
+		margin-left: 0 !important;
+		border-bottom: 1px solid $woo-elements-color;
+
+		&:not(:last-of-type) {
+			margin-bottom: 25px;
+		}
+
+		.price {
+			@include text-style-text-button-semi;
+
+			order: 1;
+			margin-bottom: 5px;
+		}
+
+		a:not(.remove) {
+			@include text-style-text-text-2;
+
+			order: 2;
+			display: block;
+			margin-bottom: 10px;
+			color: $woo-color-text-main;
+
+			&:--enter {
+				color: $color-colors-main;
+			}
+
+			img {
+				position: absolute;
+				transform: translateX(-50%);
+				max-width: $woo-thumbnail-size;
+				max-height: $woo-thumbnail-size;
+				left: calc($woo-thumbnail-size / 2);
+				top: 0;
+			}
+		}
+
+		.qty {
+			order: 3;
+			font-size: 16px;
+			line-height: 24px;
+			color: #898989;
+		}
+
+		.remove {
+			order: 4;
+			position: absolute;
+			display: inline-block;
+			width: 15px;
+			height: 18px;
+			font-size: 0;
+			background: $trash-icon 0 0 no-repeat;
+			right: $padding;
+			bottom: 25px;
+		}
+	}
+
+	&__total {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 25px 35px 30px;
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-mini-cart__buttons {
+	padding: 0 35px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0;
+
+	a.button {
+		@extend .btn;
+
+		height: 60px;
+		width: calc(50% - 10px);
+		line-height: 60px;
+		padding: 0 16px;
+		text-transform: capitalize;
+
+		&:not(.checkout) {
+			background-color: $woo-color-colors-white;
+			color: $woo-color-colors-main;
+
+			&:--enter {
+				background: $woo-color-colors-main;
+				color: $woo-color-colors-white;
+			}
+		}
+	}
+}

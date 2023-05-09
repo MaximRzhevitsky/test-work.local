@@ -1,0 +1,41 @@
+@import "../../../../src/styles/variables-and-mixins.pcss";
+
+.tabs {
+	margin: 0 auto;
+
+	&__tablist {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 15px;
+		margin: 0 0 40px;
+	}
+
+	&__button {
+		min-width: 80px;
+		height: 50px;
+		padding: 12px 25px;
+		font-size: 16px;
+		line-height: 24px;
+		text-align: center;
+		text-transform: capitalize;
+		border: 1px solid $color-text-main;
+		background: none;
+		transition: color 0.3s, background 0.3s;
+
+		&:--enter,
+		&[aria-selected="true"] {
+			color: $color-colors-white;
+			background: $color-colors-main;
+			border: 1px solid $color-colors-main;
+			box-shadow: inset 0 0 10px 0 rgb(0 0 0 / 15%);
+			font-weight: 500;
+			line-height: 22px;
+		}
+	}
+
+	&__tabpanel.is-hidden {
+		display: none;
+	}
+}

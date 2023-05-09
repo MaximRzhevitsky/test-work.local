@@ -1,0 +1,31 @@
+@import "../../variables-and-mixins.pcss";
+
+body {
+	font-family: $font-family-global;
+	background-color: $color-colors-white;
+}
+
+a {
+	color: $color-colors-main;
+	text-decoration: none;
+
+	&:--enter {
+		text-decoration: underline;
+	}
+}
+
+.inner {
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+	max-width: $max-width-main-inner;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	color: $color-text-main;
+}

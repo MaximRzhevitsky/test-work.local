@@ -1,0 +1,10 @@
+<{{#if level}}h{{level}}{{else}}h2{{/if}} class="accordion__header">
+	<button
+		class="accordion__trigger"
+		id='accordion-btn-{{accordionIndex}}'
+		type="button"
+		aria-expanded="{{#if active}}true{{else}}false{{/if}}"
+		aria-controls='accordion-panel-{{accordionIndex}}'>
+		<span class="accordion__title">{{>@partial-block}}</span>
+	</button>
+</{{#if level}}h{{level}}{{else}}h2{{/if}}>

@@ -1,0 +1,31 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+.mfp-hide {
+	display: none;
+}
+
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+.object-fit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	object-position: center top;
+
+	& ~ * {
+		position: relative;
+	}
+
+	&-cover {
+		object-fit: cover;
+		height: 100%;
+	}
+
+	&-contain {
+		object-fit: contain;
+		height: auto;
+	}
+}

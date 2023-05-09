@@ -1,0 +1,4 @@
+{{#ifpage 'index' 'home'}}
+	{{#if href}}<a class="page-footer__by-link" href="{{href}}">{{title}} <span class="page-footer__by-name">{{name}}</span></a>{{/if}}
+	{{#if seoHref}}<a class="page-footer__by-link" href="{{seoHref}}">{{seoTitle}} <span class="page-footer__by-name">{{seoName}}</span></a>{{/if}}
+{{/ifpage}}

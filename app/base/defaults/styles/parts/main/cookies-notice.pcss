@@ -1,0 +1,135 @@
+@import "../../../../../src/styles/variables-and-mixins.pcss";
+
+#cookie-law-info-bar {
+	width: 100%;
+	background-color: $color-colors-second !important;
+	padding: 31px 0 !important;
+	z-index: 10000;
+	box-shadow: none !important;
+
+	.cli-bar-container {
+		max-width: 1200px;
+		padding: 0 15px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+		font-family: $font-family-global;
+
+		@media screen and (--sm) {
+			justify-content: space-between;
+		}
+	}
+
+	.cli-bar-message {
+		width: 100%;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 25px;
+		color: $color-colors-white;
+
+		.wt-cli-ccpa-element a {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			color: $color-colors-white !important;
+			text-decoration: none;
+			border-bottom: 1px solid $color-colors-white;
+		}
+
+		@media screen and (--md) {
+			width: calc(100% - 350px);
+			max-width: 726px;
+			padding: 0;
+		}
+	}
+
+	.cli-bar-btn_container {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 20px;
+		row-gap: 10px;
+
+		@media (--sm) {
+			width: 330px;
+		}
+
+		a {
+			width: auto;
+			border: 1px solid $color-colors-white;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+			padding: 12px 23px;
+			margin: 0 !important;
+			text-align: center;
+			text-decoration: none;
+			transition: background-color 0.3s;
+
+			&.wt-cli-accept-btn {
+				background: transparent !important;
+				color: $color-colors-white !important;
+
+				&:--enter {
+					background-color: $color-colors-white !important;
+					color: $color-colors-second !important;
+				}
+			}
+
+			&.cli_settings_button {
+				min-width: 180px;
+				background-color: $color-colors-white !important;
+				color: $color-colors-second;
+
+				&:--enter {
+					background: transparent !important;
+					color: $color-colors-white !important;
+				}
+			}
+
+			@media (--less-xs) {
+				width: 100%;
+			}
+
+			&.cookie_action_close_header_reject {
+				background: none !important;
+				color: $color-colors-light-gray !important;
+				font-size: 0;
+				width: 20px;
+				height: 20px;
+				min-height: 10px;
+				padding: 0 !important;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				margin: 0;
+
+				@media (--md) {
+					right: 35px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				&::after {
+					content: "+";
+					position: absolute;
+					top: -2px;
+					left: 5px;
+					transform: rotate(45deg);
+					font-size: 25px;
+					font-weight: 300;
+					transition: 0.3s;
+				}
+
+				&:--enter {
+					&::after {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+	}
+}

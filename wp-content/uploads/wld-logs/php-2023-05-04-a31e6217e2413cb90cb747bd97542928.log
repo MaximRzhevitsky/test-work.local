@@ -1,0 +1,157 @@
+2023-05-04T08:53:54+00:00 warning strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated
+
+                                  USER: 1
+                                  URL: wp-admin/plugins.php
+                                  REFERRER: /wp-admin/plugins.php
+                                  TRACE:
+                                  wp-admin/plugins.php:124               activate_plugins()
+                                  wp-admin/includes/plugin.php:867       activate_plugin()
+                                  wp-admin/includes/plugin.php:661       plugin_sandbox_scrape()
+                                  wp-admin/includes/plugin.php:2314      include_once( "...-filter/woo-product-filter.php" )
+                                  ...-filter/woo-product-filter.php:66   FrameWpf->init()
+                                  ...oduct-filter/classes/frame.php:118  FrameWpf->_initModules()
+                                  ...oduct-filter/classes/frame.php:109  TemplatesWpf->init()
+                                  ...lter/modules/templates/mod.php:35   FrameWpf->isAdminPlugOptsPage()
+                                  ...oduct-filter/classes/frame.php:520  strpos()
+                                  N/A                                    WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125  WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150  WLD_Log_Base::get_log_trace_lines()
+
+2023-05-04T08:53:57+00:00 warning str_replace(): Passing null to parameter #3 ($subject) of type array|string is
+                                  deprecated
+
+                                  USER: 1
+                                  URL: wp-admin/plugins.php?activate-multi=true&plugin_status=all&paged=1&s=
+                                  REFERRER: wp-admin/plugins.php
+                                  TRACE:
+                                  wp-admin/plugins.php:10                require_once( "wp-admin/admin.php" )
+                                  wp-admin/admin.php:158                 require( "wp-admin/menu.php" )
+                                  wp-admin/menu.php:420                  require_once( "wp-admin/includes/menu.php" )
+                                  wp-admin/includes/menu.php:155         do_action( "admin_menu" )
+                                  wp-includes/class-wp-hook.php:308      CookieYes\Lite\Admin\Modules\Scanner\Scanner->admin_menu()
+                                  ...ules/scanner/class-scanner.php:56   add_submenu_page()
+                                  wp-admin/includes/plugin.php:1405      plugin_basename()
+                                  wp-includes/plugin.php:768             wp_normalize_path()
+                                  wp-includes/functions.php:2165         str_replace()
+                                  N/A                                    WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125  WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150  WLD_Log_Base::get_log_trace_lines()
+
+2023-05-04T09:54:16+00:00 error   Uncaught Error: Call to undefined function wc_get_product() in
+                                  D:\Projects\test-work\app\public\wp-content\plugins\woo-product-filter\modules\meta\models\meta.php:90
+                                  Stack trace:
+                                  #0
+                                  D:\Projects\test-work\app\public\wp-content\plugins\woo-product-filter\modules\meta\models\meta.php(34):
+                                  MetaModelWpf->doRecalcMetaValues(5, Array)
+                                  #1
+                                  D:\Projects\test-work\app\public\wp-content\plugins\woo-product-filter\modules\meta\mod.php(153):
+                                  MetaModelWpf->recalcMetaValues(5)
+                                  #2 D:\Projects\test-work\app\public\wp-includes\class-wp-hook.php(308):
+                                  MetaWpf->recalcProductMetaValuesAcf(5)
+                                  #3 D:\Projects\test-work\app\public\wp-includes\class-wp-hook.php(332):
+                                  WP_Hook->apply_filters(NULL, Array)
+                                  #4 D:\Projects\test-work\app\public\wp-includes\plugin.php(517):
+                                  WP_Hook->do_action(Array)
+                                  #5
+                                  D:\Projects\test-work\app\public\wp-content\plugins\advanced-custom-fields-pro\includes\acf-form-functions.php(143):
+                                  do_action('acf/save_post', 5)
+                                  #6
+                                  D:\Projects\test-work\app\public\wp-content\plugins\advanced-custom-fields-pro\includes\forms\form-post.php(329):
+                                  acf_save_post(5)
+                                  #7 D:\Projects\test-work\app\public\wp-includes\class-wp-hook.php(310):
+                                  ACF_Form_Post->save_post(5, Object(WP_Post))
+                                  #8 D:\Projects\test-work\app\public\wp-includes\class-wp-hook.php(332):
+                                  WP_Hook->apply_filters(NULL, Array)
+                                  #9 D:\Projects\test-work\app\public\wp-includes\plugin.php(517):
+                                  WP_Hook->do_action(Array)
+                                  #10 D:\Projects\test-work\app\public\wp-includes\post.php(4715):
+                                  do_action('save_post', 5, Object(WP_Post), true)
+                                  #11 D:\Projects\test-work\app\public\wp-includes\post.php(4817): wp_insert_post(Array,
+                                  false, true)
+                                  #12 D:\Projects\test-work\app\public\wp-admin\includes\post.php(439):
+                                  wp_update_post(Array)
+                                  #13 D:\Projects\test-work\app\public\wp-admin\post.php(227): edit_post()
+                                  #14 {main}
+                                    thrown
+
+                                  USER: 1
+                                  URL: wp-admin/post.php
+                                  REFERRER: /wp-admin/post-new.php?post_type=page
+                                  SHUTDOWN: wp-content/plugins/woo-product-filter/modules/meta/models/meta.php:90
+
+2023-05-04T09:58:30+00:00 warning fopen(D:\Projects\test-work\app\public/wp-content/webp-express/config/config.json):
+                                  Failed to open stream: No such file or directory
+
+                                  USER: 1
+                                  URL: wp-admin/plugins.php?action=activate&plugin=woocommerce%2Fwoocommerce.php&plugin_status=all&paged=1&s&_wpnonce=176c42b79a
+                                  REFERRER: wp-admin/plugins.php
+                                  TRACE:
+                                  wp-admin/plugins.php:58                 activate_plugin()
+                                  wp-admin/includes/plugin.php:691        do_action( "activate_woocommerce/woocommerce.php" )
+                                  wp-includes/class-wp-hook.php:308       WC_Install::install()
+                                  .../includes/class-wc-install.php:402   WC_Install::create_files()
+                                  .../includes/class-wc-install.php:1729  WC_Install::create_placeholder_image()
+                                  .../includes/class-wc-install.php:1783  wp_generate_attachment_metadata()
+                                  wp-admin/includes/image.php:496         wp_create_image_subsizes()
+                                  wp-admin/includes/image.php:377         _wp_make_subsizes()
+                                  wp-admin/includes/image.php:454         WP_Image_Editor_GD->make_subsize()
+                                  ...s/class-wp-image-editor-gd.php:299   WP_Image_Editor_GD->_save()
+                                  ...s/class-wp-image-editor-gd.php:518   apply_filters( "image_make_intermediate_size" )
+                                  wp-includes/class-wp-hook.php:308       WebPExpress\HandleUploadHooks::handleMakeIntermediateSize()
+                                  .../classes/HandleUploadHooks.php:83    WebPExpress\HandleUploadHooks::convertIf()
+                                  .../classes/HandleUploadHooks.php:25    WebPExpress\Config::loadConfigAndFix()
+                                  ...express/lib/classes/Config.php:286   WebPExpress\Config::loadConfig()
+                                  ...express/lib/classes/Config.php:15    WebPExpress\FileHelper::loadJSONOptions()
+                                  ...ess/lib/classes/FileHelper.php:371   WebPExpress\FileHelper::loadFile()
+                                  ...ess/lib/classes/FileHelper.php:226   fopen()
+                                  N/A                                     WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125   WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150   WLD_Log_Base::get_log_trace_lines()
+
+2023-05-04T09:58:58+00:00 warning Automatic conversion of false to array is deprecated
+
+                                  USER: 1
+                                  URL: wp-admin/plugins.php?activate=true&plugin_status=all&paged=1&s=
+                                  REFERRER: wp-admin/plugins.php
+                                  TRACE:
+                                  wp-admin/plugins.php:10                require_once( "wp-admin/admin.php" )
+                                  wp-admin/admin.php:158                 require( "wp-admin/menu.php" )
+                                  wp-admin/menu.php:420                  require_once( "wp-admin/includes/menu.php" )
+                                  wp-admin/includes/menu.php:155         do_action( "admin_menu" )
+                                  wp-includes/class-wp-hook.php:308      Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskLists::menu_task_count()
+                                  .../OnboardingTasks/TaskLists.php:467  Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskLists::setup_tasks_remaining()
+                                  .../OnboardingTasks/TaskLists.php:445  Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+                                  ...s/OnboardingTasks/TaskList.php:239  Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+                                  ...s/OnboardingTasks/TaskList.php:305  array_filter()
+                                  N/A                                    Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+                                  ...s/OnboardingTasks/TaskList.php:304  Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+                                  .../Tasks/WooCommercePayments.php:94   Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments::is_supported()
+                                  .../Tasks/WooCommercePayments.php:144  Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\Init::get_suggestions()
+                                  ...entGatewaySuggestions/Init.php:39   Automattic\WooCommerce\Admin\Features\PaymentGatewaySuggestions\Init::get_specs()
+                                  ...entGatewaySuggestions/Init.php:72   Automattic\WooCommerce\Admin\DataSourcePoller->get_specs_from_data_sources()
+                                  ...src/Admin/DataSourcePoller.php:112  Automattic\WooCommerce\Admin\DataSourcePoller->read_specs_from_data_sources()
+                                  ...src/Admin/DataSourcePoller.php:138  WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125  WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150  WLD_Log_Base::get_log_trace_lines()
+
+2023-05-04T09:59:32+00:00 warning explode(): Passing null to parameter #2 ($string) of type string is deprecated
+
+                                  USER: 1
+                                  URL: wp-json/wc-admin/options?_locale=user
+                                  REFERRER: wp-admin/admin.php?page=wc-admin&path=%2Fsetup-wizard
+                                  TRACE:
+                                  index.php:17                           require( "wp-blog-header.php" )
+                                  wp-blog-header.php:16                  wp()
+                                  wp-includes/functions.php:1334         WP->main()
+                                  wp-includes/class-wp.php:780           WP->parse_request()
+                                  wp-includes/class-wp.php:399           do_action_ref_array( "parse_request" )
+                                  wp-includes/class-wp-hook.php:308      rest_api_loaded()
+                                  wp-includes/rest-api.php:410           WP_REST_Server->serve_request()
+                                  ...t-api/class-wp-rest-server.php:465  apply_filters( "rest_post_dispatch" )
+                                  wp-includes/class-wp-hook.php:308      rest_send_allow_header()
+                                  wp-includes/rest-api.php:821           Automattic\WooCommerce\Admin\API\Options->get_item_permissions_check()
+                                  ...erce/src/Admin/API/Options.php:72   explode()
+                                  N/A                                    WLD_Log_Base::error_handler()
+                                  ...es/base/class-wld-log-base.php:125  WLD_Log_Base::add_log()
+                                  ...es/base/class-wld-log-base.php:150  WLD_Log_Base::get_log_trace_lines()
+

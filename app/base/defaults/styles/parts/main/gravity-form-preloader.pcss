@@ -1,0 +1,33 @@
+@keyframes optimisation-gf-form-loading {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+[data-optimisation-gf-form-id]:not(.loaded) {
+	width: 100%;
+	height: 100%;
+	min-height: 46px;
+	background: rgb(255 255 255 / 40%);
+	margin-bottom: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&::after {
+		content: "...";
+	}
+
+	&.animation::after {
+		animation: optimisation-gf-form-loading 1s ease-in infinite;
+	}
+}

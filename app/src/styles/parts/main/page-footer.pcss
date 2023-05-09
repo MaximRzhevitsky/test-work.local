@@ -1,0 +1,102 @@
+@import "../../variables-and-mixins.pcss";
+
+.page-footer {
+	background-color: $color-bg-custom;
+	color: $color-colors-white;
+
+	&__top {
+		padding: 40px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__content {
+		width: 100%;
+
+		@media (--lg) {
+			width: 30%;
+		}
+	}
+
+	&__bottom {
+		padding: 20px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		column-gap: 20px;
+
+		@media (--lg) {
+			width: 58%;
+			justify-content: flex-start;
+		}
+	}
+
+	&__contacts {
+		margin: 0 0 30px;
+
+		p {
+			color: $color-colors-white;
+			margin-bottom: 10px;
+		}
+
+		a {
+			color: $color-colors-white;
+		}
+
+		h3 {
+			color: $color-colors-white;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__copyright {
+		text-align: center;
+		color: $color-colors-white;
+
+		@media (--lg) {
+			text-align: left;
+		}
+	}
+
+	&__by {
+		height: 100%;
+		width: 100%;
+		text-align: center;
+
+		@media (--lg) {
+			width: 40%;
+			text-align: right;
+		}
+
+		a {
+			color: $color-colors-white;
+		}
+
+		span {
+			color: $color-colors-main;
+		}
+	}
+}
+
+.footer-menu-tooltip {
+	@include text-style-text-text-2;
+
+	position: absolute;
+	top: -33px;
+	left: 0;
+	padding: 0 10px;
+	background: $color-colors-main;
+	border-radius: 5px;
+	line-height: 27px;
+	color: $color-colors-white;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
